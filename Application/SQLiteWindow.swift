@@ -20,7 +20,7 @@ class SQLiteWindow : Window {
 		didSet {
 			sqlite3_exec(db, "PRAGMA foreign_keys = TRUE", nil, nil, nil)
 			sqlite3_update_hook(db, { (pointer, type, database, table, rowid) in
-				DispatchQueue.main.async {
+				DispatchQueue.main.async { // delay the callback until after the database hook in case the callback wants to write to the database
 					for object in unsafeBitCast(pointer, to: NSMapTable<AnyObject, SQLiteUpdateHook>.self).objectEnumerator()! {
 						let hook = object as! SQLiteUpdateHook
 						hook.callback(type, String(bytesNoCopy: UnsafeMutableRawPointer(mutating: table!), length: strlen(table!), encoding: .utf8, freeWhenDone: false)!, rowid)
@@ -47,7 +47,7 @@ class SQLiteWindow : Window {
 
 			var db = OpaquePointer(bitPattern: 0)
 			if sqlite3_open_v2(url.path, &db, SQLITE_OPEN_READWRITE+SQLITE_OPEN_CREATE, nil) != SQLITE_OK {
-				assertionFailure(String(cString: sqlite3_errmsg(db)))
+				fatalError(String(cString: sqlite3_errmsg(db)))
 			}
 
 			sqlite3_close_v2(self.db)

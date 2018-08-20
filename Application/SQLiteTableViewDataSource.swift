@@ -2,8 +2,15 @@ import UIKit
 
 
 class SQLiteTableViewDatasource: SQLiteQuery, UITableViewDataSource {
+
 	var tableView: UITableView? {
 		return owner as? UITableView
+	}
+
+	override var array: [[String : AnyObject]] {
+		willSet {
+//			(owner as? UITableView)?.animateRowChanges(oldData: super.array, newData: newValue)
+		}
 	}
 
 	lazy var refreshControl: UIRefreshControl = {
@@ -20,7 +27,7 @@ class SQLiteTableViewDatasource: SQLiteQuery, UITableViewDataSource {
 		}
 
 		super.reloadData()
-		tableView?.reloadData()
+		tableView?.reloadData() // TODO: remove once animateRowChanges() is working
 	}
 
 // MARK: -

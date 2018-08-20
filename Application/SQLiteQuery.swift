@@ -3,13 +3,23 @@ import Foundation
 
 @IBDesignable
 class SQLiteQuery: NSObject {
-	private var array: [[String : AnyObject]] = [ ]
+	var array: [[String : AnyObject]] = [ ]
 
 	var keys: [String] = [ ]
 	var stmt = OpaquePointer(bitPattern: 0) {
 		didSet {
 			for column in 0..<sqlite3_column_count(stmt) {
-				self.keys.append(String(cString: sqlite3_column_name(stmt, column)))
+				keys.append(String(cString: sqlite3_column_name(stmt, column)))
+
+				var tables: Set<String> = [ ]
+				let name = String(cString: sqlite3_column_table_name(stmt, column))
+				tables.insert(name)
+
+				self.updateHook = { [weak self] (type: Int32, table: String, rowid: Int64) in
+					if tables.contains(table) { // tables captured by value
+						self?.reloadData()
+					}
+				}
 			}
 		}
 	}
@@ -38,7 +48,7 @@ class SQLiteQuery: NSObject {
 				self.query.withCString { cString in
 					let sql = withVaList([ cString ]) { args in return sqlite3_vmprintf("SELECT * FROM (%s)", args) }; defer { sqlite3_free(sql) }
 					if sqlite3_prepare_v2(db, sql, -1, &stmt, nil) != SQLITE_OK {
-						assertionFailure(String(cString: sqlite3_errmsg(db)))
+						fatalError(String(cString: sqlite3_errmsg(db)))
 					}
 				}
 

@@ -52,7 +52,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKS-Go-RXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="1ph-AN-jYD" customClass="SQLiteTableViewDatasource" customModule="MVVM" customModuleProvider="target">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="query" value="SELECT name, type FROM sqlite_master WHERE type = 'table'"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="query" value="'sqlite tables'"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="owner" destination="JLk-7q-ihP" id="Bla-Nf-dRH"/>

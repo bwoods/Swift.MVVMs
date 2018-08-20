@@ -14,6 +14,5 @@ CREATE TRIGGER 'time created → modified' INSERT ON 'time created'
   BEGIN
     INSERT INTO 'time modified' (uid,utc) VALUES (NEW.uid, NEW.utc);
   END;
-
-CREATE VIEW 'date imported' (uid,utc) AS SELECT uid, CAST (utc AS INTEGER) FROM 'time modified';
+  
 PRAGMA user_version = 2;

@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E89BDF652128F74F0066D930 /* SQLiteSchemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF642128F74F0066D930 /* SQLiteSchemas.swift */; };
+		E89BDF652128F74F0066D930 /* SQLiteWindow+Schemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
 		E89BDF69212A23530066D930 /* UIControl+NSValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF68212A23530066D930 /* UIControl+NSValue.swift */; };
+		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
+		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
+		E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6D212A83D40066D930 /* ExtendedDiff.swift */; };
+		E89BDF7D212A83D40066D930 /* Diff+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6E212A83D40066D930 /* Diff+UIKit.swift */; };
+		E89BDF7E212A83D40066D930 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6F212A83D40066D930 /* Diff.swift */; };
+		E89BDF7F212A83D40066D930 /* NestedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF70212A83D40066D930 /* NestedDiff.swift */; };
+		E89BDF80212A83D40066D930 /* GenericPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF71212A83D40066D930 /* GenericPatch.swift */; };
+		E89BDF81212A83D40066D930 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF72212A83D40066D930 /* Patch.swift */; };
+		E89BDF83212A83D40066D930 /* NestedBatchUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF74212A83D40066D930 /* NestedBatchUpdate.swift */; };
+		E89BDF84212A83D40066D930 /* BatchUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF75212A83D40066D930 /* BatchUpdate.swift */; };
+		E89BDF85212A83D40066D930 /* Patch+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF76212A83D40066D930 /* Patch+Apply.swift */; };
+		E89BDF86212A83D40066D930 /* Patch+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF77212A83D40066D930 /* Patch+Sort.swift */; };
+		E89BDF87212A83D40066D930 /* ExtendedPatch+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF78212A83D40066D930 /* ExtendedPatch+Apply.swift */; };
+		E89BDF88212A83D40066D930 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF79212A83D40066D930 /* LinkedList.swift */; };
 		E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */; };
 		E8D52CAA2127D2D6003BE5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CA82127D2D6003BE5CC /* Main.storyboard */; };
 		E8D52CAC2127D2D7003BE5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CAB2127D2D7003BE5CC /* Assets.xcassets */; };
@@ -21,9 +35,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E89BDF642128F74F0066D930 /* SQLiteSchemas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteSchemas.swift; sourceTree = "<group>"; };
+		E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SQLiteWindow+Schemas.swift"; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
 		E89BDF68212A23530066D930 /* UIControl+NSValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+NSValue.swift"; sourceTree = "<group>"; };
+		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
+		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
+		E89BDF6D212A83D40066D930 /* ExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedDiff.swift; sourceTree = "<group>"; };
+		E89BDF6E212A83D40066D930 /* Diff+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Diff+UIKit.swift"; sourceTree = "<group>"; };
+		E89BDF6F212A83D40066D930 /* Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
+		E89BDF70212A83D40066D930 /* NestedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedDiff.swift; sourceTree = "<group>"; };
+		E89BDF71212A83D40066D930 /* GenericPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericPatch.swift; sourceTree = "<group>"; };
+		E89BDF72212A83D40066D930 /* Patch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
+		E89BDF73212A83D40066D930 /* Diff+AppKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Diff+AppKit.swift"; sourceTree = "<group>"; };
+		E89BDF74212A83D40066D930 /* NestedBatchUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedBatchUpdate.swift; sourceTree = "<group>"; };
+		E89BDF75212A83D40066D930 /* BatchUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchUpdate.swift; sourceTree = "<group>"; };
+		E89BDF76212A83D40066D930 /* Patch+Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Patch+Apply.swift"; sourceTree = "<group>"; };
+		E89BDF77212A83D40066D930 /* Patch+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Patch+Sort.swift"; sourceTree = "<group>"; };
+		E89BDF78212A83D40066D930 /* ExtendedPatch+Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtendedPatch+Apply.swift"; sourceTree = "<group>"; };
+		E89BDF79212A83D40066D930 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		E8D52CA12127D2D6003BE5CC /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		E8D52CA92127D2D6003BE5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,11 +78,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E89BDF6A212A83D40066D930 /* Differ */ = {
+			isa = PBXGroup;
+			children = (
+				E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */,
+				E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */,
+				E89BDF6D212A83D40066D930 /* ExtendedDiff.swift */,
+				E89BDF6E212A83D40066D930 /* Diff+UIKit.swift */,
+				E89BDF6F212A83D40066D930 /* Diff.swift */,
+				E89BDF70212A83D40066D930 /* NestedDiff.swift */,
+				E89BDF71212A83D40066D930 /* GenericPatch.swift */,
+				E89BDF72212A83D40066D930 /* Patch.swift */,
+				E89BDF73212A83D40066D930 /* Diff+AppKit.swift */,
+				E89BDF74212A83D40066D930 /* NestedBatchUpdate.swift */,
+				E89BDF75212A83D40066D930 /* BatchUpdate.swift */,
+				E89BDF76212A83D40066D930 /* Patch+Apply.swift */,
+				E89BDF77212A83D40066D930 /* Patch+Sort.swift */,
+				E89BDF78212A83D40066D930 /* ExtendedPatch+Apply.swift */,
+				E89BDF79212A83D40066D930 /* LinkedList.swift */,
+			);
+			name = Differ;
+			path = Differ/Sources/Differ;
+			sourceTree = "<group>";
+		};
 		E8D52C982127D2D6003BE5CC = {
 			isa = PBXGroup;
 			children = (
 				E8D52CA32127D2D6003BE5CC /* Application */,
-				E8D52CC52127DF83003BE5CC /* Model View Viewmodel */,
+				E8D52CC52127DF83003BE5CC /* Model View ViewModel */,
+				E89BDF6A212A83D40066D930 /* Differ */,
 				E8D52CB62127D7A1003BE5CC /* sqlite₃ */,
 				E8D52CA22127D2D6003BE5CC /* Products */,
 			);
@@ -91,15 +144,15 @@
 			path = "sqlite₃";
 			sourceTree = "<group>";
 		};
-		E8D52CC52127DF83003BE5CC /* Model View Viewmodel */ = {
+		E8D52CC52127DF83003BE5CC /* Model View ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				E8D52CBD2127D7C9003BE5CC /* SQLiteWindow.swift */,
-				E89BDF642128F74F0066D930 /* SQLiteSchemas.swift */,
+				E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */,
 				E8D52CC32127DD85003BE5CC /* SQLiteQuery.swift */,
 				E8D52CC62127E027003BE5CC /* SQLiteTableViewDataSource.swift */,
 			);
-			name = "Model View Viewmodel";
+			name = "Model View ViewModel";
 			path = Application;
 			sourceTree = "<group>";
 		};
@@ -176,12 +229,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */,
+				E89BDF81212A83D40066D930 /* Patch.swift in Sources */,
+				E89BDF7D212A83D40066D930 /* Diff+UIKit.swift in Sources */,
 				E8D52CC22127D821003BE5CC /* sqlite3.c in Sources */,
 				E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */,
+				E89BDF87212A83D40066D930 /* ExtendedPatch+Apply.swift in Sources */,
+				E89BDF84212A83D40066D930 /* BatchUpdate.swift in Sources */,
+				E89BDF85212A83D40066D930 /* Patch+Apply.swift in Sources */,
+				E89BDF80212A83D40066D930 /* GenericPatch.swift in Sources */,
+				E89BDF7F212A83D40066D930 /* NestedDiff.swift in Sources */,
+				E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */,
 				E8D52CBE2127D7C9003BE5CC /* SQLiteWindow.swift in Sources */,
+				E89BDF7E212A83D40066D930 /* Diff.swift in Sources */,
 				E89BDF69212A23530066D930 /* UIControl+NSValue.swift in Sources */,
+				E89BDF86212A83D40066D930 /* Patch+Sort.swift in Sources */,
+				E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */,
 				E8D52CC42127DD85003BE5CC /* SQLiteQuery.swift in Sources */,
-				E89BDF652128F74F0066D930 /* SQLiteSchemas.swift in Sources */,
+				E89BDF652128F74F0066D930 /* SQLiteWindow+Schemas.swift in Sources */,
+				E89BDF83212A83D40066D930 /* NestedBatchUpdate.swift in Sources */,
+				E89BDF88212A83D40066D930 /* LinkedList.swift in Sources */,
 				E8D52CC72127E028003BE5CC /* SQLiteTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
