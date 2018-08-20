@@ -1,0 +1,3 @@
+[submodule "Differ"]
+	path = Differ
+	url = https://github.com/tonyarnold/Differ.git
