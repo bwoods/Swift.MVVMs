@@ -14,14 +14,6 @@ class SQLiteTableViewDatasource: SQLiteQuery, UITableViewDataSource {
 		}
 	}
 
-// MARK: -
-	func fill(view: UIView, with value: [String : AnyObject]) {
-		keys.enumerated().forEach { (index, key) in
-			let tag = index+1
-			view.viewWithTag(tag)?.takeValue(from: value[key]!)
-		}
-	}
-
 // MARK: - UITableViewDataSource methods
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.count
@@ -35,7 +27,7 @@ class SQLiteTableViewDatasource: SQLiteQuery, UITableViewDataSource {
 			cell.imageView?.tag = 3
 		}
 
-		self.fill(view: cell.contentView, with: self[indexPath.row])
+		self.fill(cell.contentView, with: self[indexPath.row])
 		return cell
 	}
 

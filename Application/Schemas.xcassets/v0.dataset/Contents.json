@@ -9,7 +9,8 @@
   "data" : [
     {
       "idiom" : "universal",
-      "filename" : "schema.sql"
+      "filename" : "schema.sql",
+      "compression-type" : "lossless"
     }
   ]
 }

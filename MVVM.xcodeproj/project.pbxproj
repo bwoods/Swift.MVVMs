@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E89BDF652128F74F0066D930 /* SQLiteWindow+Schemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
-		E89BDF69212A23530066D930 /* UIControl+NSValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF68212A23530066D930 /* UIControl+NSValue.swift */; };
+		E89BDF69212A23530066D930 /* SQLiteQuery+NSValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF68212A23530066D930 /* SQLiteQuery+NSValue.swift */; };
 		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
 		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
 		E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6D212A83D40066D930 /* ExtendedDiff.swift */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SQLiteWindow+Schemas.swift"; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
-		E89BDF68212A23530066D930 /* UIControl+NSValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+NSValue.swift"; sourceTree = "<group>"; };
+		E89BDF68212A23530066D930 /* SQLiteQuery+NSValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SQLiteQuery+NSValue.swift"; sourceTree = "<group>"; };
 		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
 		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
 		E89BDF6D212A83D40066D930 /* ExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedDiff.swift; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				E8D52CA82127D2D6003BE5CC /* Main.storyboard */,
 				E8D52CC02127D821003BE5CC /* ApplicationBridging.h */,
 				E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */,
-				E89BDF68212A23530066D930 /* UIControl+NSValue.swift */,
 				E8D52CB02127D2D7003BE5CC /* Info.plist */,
 			);
 			path = Application;
@@ -152,6 +151,7 @@
 				E8D52CBD2127D7C9003BE5CC /* SQLiteWindow.swift */,
 				E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */,
 				E8D52CC32127DD85003BE5CC /* SQLiteQuery.swift */,
+				E89BDF68212A23530066D930 /* SQLiteQuery+NSValue.swift */,
 				E8D52CC62127E027003BE5CC /* SQLiteTableViewDataSource.swift */,
 				E8A7201E212B925F00FC2020 /* SQLiteSectionedTableViewDatasource.swift */,
 			);
@@ -250,7 +250,7 @@
 				E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */,
 				E8D52CBE2127D7C9003BE5CC /* SQLiteWindow.swift in Sources */,
 				E8D52CC42127DD85003BE5CC /* SQLiteQuery.swift in Sources */,
-				E89BDF69212A23530066D930 /* UIControl+NSValue.swift in Sources */,
+				E89BDF69212A23530066D930 /* SQLiteQuery+NSValue.swift in Sources */,
 				E89BDF652128F74F0066D930 /* SQLiteWindow+Schemas.swift in Sources */,
 				E8D52CC72127E028003BE5CC /* SQLiteTableViewDataSource.swift in Sources */,
 				E8A7201F212B925F00FC2020 /* SQLiteSectionedTableViewDatasource.swift in Sources */,

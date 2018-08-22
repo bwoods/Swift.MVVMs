@@ -60,7 +60,7 @@ class SQLiteQuery: NSObject {
 
 		var array: [[String : NSObject]] = [ ]
 		while sqlite3_step(stmt) == SQLITE_ROW {
-			var result: [String : NSObject] = [:]
+			var result = [String : NSObject](minimumCapacity: numericCast(sqlite3_column_count(stmt)))
 
 			for column in (0..<sqlite3_column_count(stmt)) {
 				let type = sqlite3_column_type(stmt, column)
@@ -91,7 +91,7 @@ class SQLiteQuery: NSObject {
 		return array.count
 	}
 
-	subscript(index: Int) -> [String : AnyObject] {
+	subscript(index: Int) -> [String : NSObject] {
 		return array[index]
 	}
 

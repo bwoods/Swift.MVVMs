@@ -29,8 +29,8 @@ extension SQLiteWindow {
 				}
 			}
 
-			if let asset = NSDataAsset(name: "v0") { // temporary tables/views that need creating every time
-				if sqlite3_exec(db, String(data: asset.data, encoding: .utf8)!, nil, nil, nil) != SQLITE_OK {
+			if let asset = NSDataAsset(name: "v0"), let sql = String(data: asset.data, encoding: .utf8) { // temporary tables/views that need creating every time
+				if sqlite3_exec(db, sql, nil, nil, nil) != SQLITE_OK {
 					fatalError(String(cString: sqlite3_errmsg(db)))
 				}
 			}
