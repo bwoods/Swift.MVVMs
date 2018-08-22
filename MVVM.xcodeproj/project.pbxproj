@@ -166,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8D52CB32127D2D7003BE5CC /* Build configuration list for PBXNativeTarget "MVVM" */;
 			buildPhases = (
+				E8A72021212DF4F700FC2020 /* ShellScript */,
 				E8D52C9D2127D2D6003BE5CC /* Sources */,
 				E8D52C9E2127D2D6003BE5CC /* Frameworks */,
 				E8D52C9F2127D2D6003BE5CC /* Resources */,
@@ -226,6 +227,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E8A72021212DF4F700FC2020 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "# Since these assets are edited externally, make Xcode always rebuild them…\nfind ${SRCROOT}/Application/Schemas.xcassets -exec touch {} \\;";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8D52C9D2127D2D6003BE5CC /* Sources */ = {
