@@ -2,32 +2,16 @@ import UIKit
 
 
 class SQLiteTableViewDatasource: SQLiteQuery, UITableViewDataSource {
-
-	var tableView: UITableView? {
-		return owner as? UITableView
-	}
-
-	override var array: [[String : AnyObject]] {
-		willSet {
-//			(owner as? UITableView)?.animateRowChanges(oldData: super.array, newData: newValue)
+	override var array: [[String : NSObject]] {
+		didSet {
+			if let tableView = self.owner as? UITableView {
+				if oldValue.count == 0 {
+					tableView.reloadData() // don't animate in the initial elements
+				} else {
+					tableView.animateRowChanges(oldData: oldValue, newData: self.array)
+				}
+			}
 		}
-	}
-
-	lazy var refreshControl: UIRefreshControl = {
-		let refreshControl = UIRefreshControl()
-		refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
-
-		tableView!.refreshControl = refreshControl // a crash here means self.refreshControl was called a cycle too soon
-		return refreshControl
-	}()
-
-	@objc override func reloadData() {		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.750) { // give the animation time to re-assure the user that we're doing something
-			self.refreshControl.endRefreshing()
-		}
-
-		super.reloadData()
-		tableView?.reloadData() // TODO: remove once animateRowChanges() is working
 	}
 
 // MARK: -

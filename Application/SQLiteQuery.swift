@@ -1,9 +1,8 @@
 import Foundation
 
 
-@IBDesignable
 class SQLiteQuery: NSObject {
-	var array: [[String : AnyObject]] = [ ]
+	var array: [[String : NSObject]] = [ ]
 
 	var keys: [String] = [ ]
 	var stmt = OpaquePointer(bitPattern: 0) {
@@ -24,8 +23,8 @@ class SQLiteQuery: NSObject {
 		}
 	}
 
-	@IBOutlet var owner: NSObject! {
-		willSet { assert(newValue.responds(to: Selector(("window")))) }
+	@IBOutlet var owner: NSObject? {
+		willSet { assert(newValue == nil || newValue!.responds(to: Selector(("window")))) }
 		didSet { reloadData() }
 	}
 
@@ -41,7 +40,7 @@ class SQLiteQuery: NSObject {
 		guard stmt != OpaquePointer(bitPattern: 0) else {
 			DispatchQueue.main.async { // awakeFromNib sets key-values before the view is in the window
 				let selector = Selector(("window")) // double parens remove the compiler warning about an arbitrary method selector
-				let window = self.owner.perform(selector).takeUnretainedValue() as! SQLiteWindow
+				let window = self.owner!.perform(selector).takeUnretainedValue() as! SQLiteWindow
 				let db = window.db
 
 				var stmt = OpaquePointer(bitPattern: 0)
@@ -59,22 +58,25 @@ class SQLiteQuery: NSObject {
 			return
 		}
 
-		var array: [[String : AnyObject]] = [ ]
+		var array: [[String : NSObject]] = [ ]
 		while sqlite3_step(stmt) == SQLITE_ROW {
-			var result: [String : AnyObject] = [:]
+			var result: [String : NSObject] = [:]
 
 			for column in (0..<sqlite3_column_count(stmt)) {
-				if sqlite3_column_type(stmt, column) != SQLITE_NULL {
-					result[String(cString: sqlite3_column_name(stmt, column))] = {
-						switch sqlite3_column_type(stmt, column) {
-						case SQLITE_INTEGER: return NSNumber(value: sqlite3_column_int64(stmt, column))
-						case SQLITE_FLOAT: return NSNumber(value: sqlite3_column_double(stmt, column))
-						case SQLITE_TEXT: return NSString(bytes: sqlite3_column_text(stmt, column), length: numericCast(sqlite3_column_bytes(stmt, column)), encoding: String.Encoding.utf8.rawValue)
-						case SQLITE_BLOB: return NSData(bytes: sqlite3_column_blob(stmt, column), length: numericCast(sqlite3_column_bytes(stmt, column)))
-						default: fatalError()
-						}
-					}()
+				let type = sqlite3_column_type(stmt, column)
+				guard type != SQLITE_NULL else {
+					continue // skip NULL values
 				}
+
+				result[String(cString: sqlite3_column_name(stmt, column))] = {
+					switch type {
+					case SQLITE_INTEGER: return NSNumber(value: sqlite3_column_int64(stmt, column))
+					case SQLITE_FLOAT: return NSNumber(value: sqlite3_column_double(stmt, column))
+					case SQLITE_TEXT: return NSString(bytes: sqlite3_column_text(stmt, column), length: numericCast(sqlite3_column_bytes(stmt, column)), encoding: String.Encoding.utf8.rawValue)
+					case SQLITE_BLOB: return NSData(bytes: sqlite3_column_blob(stmt, column), length: numericCast(sqlite3_column_bytes(stmt, column)))
+					default: fatalError()
+					}
+				}()
 			}
 
 			array.append(result)
