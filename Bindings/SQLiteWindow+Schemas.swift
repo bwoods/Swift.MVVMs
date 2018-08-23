@@ -7,12 +7,8 @@
 
 extension SQLiteWindow {
 	func schemaVersioning() throws {
-		var stmt = OpaquePointer(bitPattern: 0)
-		if sqlite3_prepare_v2(db, "PRAGMA user_version", -1, &stmt, nil) != SQLITE_OK { fatalError(String(cString: sqlite3_errmsg(db))); }
-		defer { sqlite3_finalize(stmt) }
+		var version = decode(from: db, one: Int.self, "PRAGMA user_version")!
 
-		if sqlite3_step(stmt) != SQLITE_ROW { fatalError(String(cString: sqlite3_errmsg(db))); }
-		var version: Int = numericCast(sqlite3_column_int(stmt, 0))
 		if version > 0 && NSDataAsset(name: "v\(version)") == nil {
 			throw NSError(domain: "schema", code: version, userInfo: [
 				NSLocalizedFailureReasonErrorKey : "Document is of a newer file format ‘\(version)’ that this application version supports",
