@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E89BDF652128F74F0066D930 /* SQLiteWindow+Schemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */; };
+		E84CB09D212F4511006B6024 /* SQLiteQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB097212F4511006B6024 /* SQLiteQuery.swift */; };
+		E84CB09E212F4511006B6024 /* SQLiteQuery+NSValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB098212F4511006B6024 /* SQLiteQuery+NSValue.swift */; };
+		E84CB09F212F4511006B6024 /* SQLiteSectionedTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB099212F4511006B6024 /* SQLiteSectionedTableViewDatasource.swift */; };
+		E84CB0A0212F4511006B6024 /* SQLiteTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */; };
+		E84CB0A1212F4511006B6024 /* SQLiteWindow+Schemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09B212F4511006B6024 /* SQLiteWindow+Schemas.swift */; };
+		E84CB0A2212F4511006B6024 /* SQLiteWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09C212F4511006B6024 /* SQLiteWindow.swift */; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
-		E89BDF69212A23530066D930 /* SQLiteQuery+NSValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF68212A23530066D930 /* SQLiteQuery+NSValue.swift */; };
 		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
 		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
 		E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6D212A83D40066D930 /* ExtendedDiff.swift */; };
@@ -24,21 +28,21 @@
 		E89BDF86212A83D40066D930 /* Patch+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF77212A83D40066D930 /* Patch+Sort.swift */; };
 		E89BDF87212A83D40066D930 /* ExtendedPatch+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF78212A83D40066D930 /* ExtendedPatch+Apply.swift */; };
 		E89BDF88212A83D40066D930 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF79212A83D40066D930 /* LinkedList.swift */; };
-		E8A7201F212B925F00FC2020 /* SQLiteSectionedTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7201E212B925F00FC2020 /* SQLiteSectionedTableViewDatasource.swift */; };
 		E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */; };
 		E8D52CAA2127D2D6003BE5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CA82127D2D6003BE5CC /* Main.storyboard */; };
 		E8D52CAC2127D2D7003BE5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CAB2127D2D7003BE5CC /* Assets.xcassets */; };
 		E8D52CAF2127D2D7003BE5CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CAD2127D2D7003BE5CC /* LaunchScreen.storyboard */; };
-		E8D52CBE2127D7C9003BE5CC /* SQLiteWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CBD2127D7C9003BE5CC /* SQLiteWindow.swift */; };
 		E8D52CC22127D821003BE5CC /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CC12127D821003BE5CC /* sqlite3.c */; settings = {COMPILER_FLAGS = "-w -DSQLITE_ENABLE_COLUMN_METADATA"; }; };
-		E8D52CC42127DD85003BE5CC /* SQLiteQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CC32127DD85003BE5CC /* SQLiteQuery.swift */; };
-		E8D52CC72127E028003BE5CC /* SQLiteTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CC62127E027003BE5CC /* SQLiteTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SQLiteWindow+Schemas.swift"; sourceTree = "<group>"; };
+		E84CB097212F4511006B6024 /* SQLiteQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteQuery.swift; sourceTree = "<group>"; };
+		E84CB098212F4511006B6024 /* SQLiteQuery+NSValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteQuery+NSValue.swift"; sourceTree = "<group>"; };
+		E84CB099212F4511006B6024 /* SQLiteSectionedTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteSectionedTableViewDatasource.swift; sourceTree = "<group>"; };
+		E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewDataSource.swift; sourceTree = "<group>"; };
+		E84CB09B212F4511006B6024 /* SQLiteWindow+Schemas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteWindow+Schemas.swift"; sourceTree = "<group>"; };
+		E84CB09C212F4511006B6024 /* SQLiteWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWindow.swift; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
-		E89BDF68212A23530066D930 /* SQLiteQuery+NSValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SQLiteQuery+NSValue.swift"; sourceTree = "<group>"; };
 		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
 		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
 		E89BDF6D212A83D40066D930 /* ExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedDiff.swift; sourceTree = "<group>"; };
@@ -54,19 +58,15 @@
 		E89BDF77212A83D40066D930 /* Patch+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Patch+Sort.swift"; sourceTree = "<group>"; };
 		E89BDF78212A83D40066D930 /* ExtendedPatch+Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtendedPatch+Apply.swift"; sourceTree = "<group>"; };
 		E89BDF79212A83D40066D930 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
-		E8A7201E212B925F00FC2020 /* SQLiteSectionedTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteSectionedTableViewDatasource.swift; sourceTree = "<group>"; };
 		E8D52CA12127D2D6003BE5CC /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		E8D52CA92127D2D6003BE5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8D52CAB2127D2D7003BE5CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8D52CAE2127D2D7003BE5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8D52CB02127D2D7003BE5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8D52CBD2127D7C9003BE5CC /* SQLiteWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteWindow.swift; sourceTree = "<group>"; };
 		E8D52CBF2127D816003BE5CC /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		E8D52CC02127D821003BE5CC /* ApplicationBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationBridging.h; sourceTree = "<group>"; };
 		E8D52CC12127D821003BE5CC /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
-		E8D52CC32127DD85003BE5CC /* SQLiteQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteQuery.swift; sourceTree = "<group>"; };
-		E8D52CC62127E027003BE5CC /* SQLiteTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +80,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E84CB096212F4511006B6024 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				E84CB09C212F4511006B6024 /* SQLiteWindow.swift */,
+				E84CB09B212F4511006B6024 /* SQLiteWindow+Schemas.swift */,
+				E84CB097212F4511006B6024 /* SQLiteQuery.swift */,
+				E84CB098212F4511006B6024 /* SQLiteQuery+NSValue.swift */,
+				E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */,
+				E84CB099212F4511006B6024 /* SQLiteSectionedTableViewDatasource.swift */,
+			);
+			path = Bindings;
+			sourceTree = "<group>";
+		};
 		E89BDF6A212A83D40066D930 /* Differ */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				E8D52CA32127D2D6003BE5CC /* Application */,
-				E8D52CC52127DF83003BE5CC /* Model View ViewModel */,
+				E84CB096212F4511006B6024 /* Bindings */,
 				E89BDF6A212A83D40066D930 /* Differ */,
 				E8D52CB62127D7A1003BE5CC /* sqlite₃ */,
 				E8D52CA22127D2D6003BE5CC /* Products */,
@@ -143,20 +156,6 @@
 				E8D52CC12127D821003BE5CC /* sqlite3.c */,
 			);
 			path = "sqlite₃";
-			sourceTree = "<group>";
-		};
-		E8D52CC52127DF83003BE5CC /* Model View ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				E8D52CBD2127D7C9003BE5CC /* SQLiteWindow.swift */,
-				E89BDF642128F74F0066D930 /* SQLiteWindow+Schemas.swift */,
-				E8D52CC32127DD85003BE5CC /* SQLiteQuery.swift */,
-				E89BDF68212A23530066D930 /* SQLiteQuery+NSValue.swift */,
-				E8D52CC62127E027003BE5CC /* SQLiteTableViewDataSource.swift */,
-				E8A7201E212B925F00FC2020 /* SQLiteSectionedTableViewDatasource.swift */,
-			);
-			name = "Model View ViewModel";
-			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E8D52C9C2127D2D6003BE5CC /* Build configuration list for PBXProject "MVVM" */;
+			buildConfigurationList = E8D52C9C2127D2D6003BE5CC /* Build configuration list for PBXProject "Application" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,10 +251,15 @@
 			files = (
 				E8D52CC22127D821003BE5CC /* sqlite3.c in Sources */,
 				E89BDF7E212A83D40066D930 /* Diff.swift in Sources */,
+				E84CB0A0212F4511006B6024 /* SQLiteTableViewDataSource.swift in Sources */,
+				E84CB0A2212F4511006B6024 /* SQLiteWindow.swift in Sources */,
 				E89BDF81212A83D40066D930 /* Patch.swift in Sources */,
 				E89BDF7D212A83D40066D930 /* Diff+UIKit.swift in Sources */,
 				E89BDF88212A83D40066D930 /* LinkedList.swift in Sources */,
+				E84CB09F212F4511006B6024 /* SQLiteSectionedTableViewDatasource.swift in Sources */,
 				E89BDF7F212A83D40066D930 /* NestedDiff.swift in Sources */,
+				E84CB09D212F4511006B6024 /* SQLiteQuery.swift in Sources */,
+				E84CB09E212F4511006B6024 /* SQLiteQuery+NSValue.swift in Sources */,
 				E89BDF86212A83D40066D930 /* Patch+Sort.swift in Sources */,
 				E89BDF84212A83D40066D930 /* BatchUpdate.swift in Sources */,
 				E89BDF85212A83D40066D930 /* Patch+Apply.swift in Sources */,
@@ -266,12 +270,7 @@
 				E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */,
 				E89BDF87212A83D40066D930 /* ExtendedPatch+Apply.swift in Sources */,
 				E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */,
-				E8D52CBE2127D7C9003BE5CC /* SQLiteWindow.swift in Sources */,
-				E8D52CC42127DD85003BE5CC /* SQLiteQuery.swift in Sources */,
-				E89BDF69212A23530066D930 /* SQLiteQuery+NSValue.swift in Sources */,
-				E89BDF652128F74F0066D930 /* SQLiteWindow+Schemas.swift in Sources */,
-				E8D52CC72127E028003BE5CC /* SQLiteTableViewDataSource.swift in Sources */,
-				E8A7201F212B925F00FC2020 /* SQLiteSectionedTableViewDatasource.swift in Sources */,
+				E84CB0A1212F4511006B6024 /* SQLiteWindow+Schemas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E8D52C9C2127D2D6003BE5CC /* Build configuration list for PBXProject "MVVM" */ = {
+		E8D52C9C2127D2D6003BE5CC /* Build configuration list for PBXProject "Application" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E8D52CB12127D2D7003BE5CC /* Debug */,
