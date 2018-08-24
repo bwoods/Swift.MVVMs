@@ -30,7 +30,7 @@ struct SQLiteRowDecoder<Key: CodingKey>: KeyedDecodingContainerProtocol {
 	var codingPath: [CodingKey] = [ ]
 
 	// these all assume the sqlite3_stmt has already been sqlite3_step()’d
-	func decodeNil(forKey key: Key) throws -> Bool { return decoder(for: key).decodeNil() }
+	func decodeNil(forKey key: Key) throws -> Bool { return columns[key.stringValue] == nil || decoder(for: key).decodeNil() }
 	func decode(_ type: Bool.Type, forKey key: Key) throws -> Bool { return try decoder(for: key).decode(type) }
 	func decode(_ type: String.Type, forKey key: Key) throws -> String { return try decoder(for: key).decode(type) }
 	func decode(_ type: Double.Type, forKey key: Key) throws -> Double { return try decoder(for: key).decode(type) }
