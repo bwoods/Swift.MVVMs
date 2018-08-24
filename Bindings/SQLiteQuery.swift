@@ -7,17 +7,15 @@ class SQLiteQuery: NSObject {
 	var keys: [String] = [ ]
 	var stmt = OpaquePointer(bitPattern: 0) {
 		didSet {
+			var tables: Set<String> = [ ]
 			for column in 0..<sqlite3_column_count(stmt) {
 				keys.append(String(cString: sqlite3_column_name(stmt, column)))
+				tables.insert(String(cString: sqlite3_column_table_name(stmt, column)))
+			}
 
-				var tables: Set<String> = [ ]
-				let name = String(cString: sqlite3_column_table_name(stmt, column))
-				tables.insert(name)
-
-				self.updateHook = { [weak self] (type: Int32, table: String, rowid: Int64) in
-					if tables.contains(table) { // tables captured by value
-						self?.reloadData()
-					}
+			self.updateHook = { [weak self, tables] (type: Int32, table: String, rowid: Int64) in
+				if tables.contains(table) {
+					self?.reloadData()
 				}
 			}
 		}
@@ -58,7 +56,9 @@ class SQLiteQuery: NSObject {
 			return
 		}
 
+		defer { sqlite3_reset(stmt) }
 		var array: [[String : NSObject]] = [ ]
+
 		while sqlite3_step(stmt) == SQLITE_ROW {
 			var result = [String : NSObject](minimumCapacity: numericCast(sqlite3_column_count(stmt)))
 
@@ -82,7 +82,6 @@ class SQLiteQuery: NSObject {
 			array.append(result)
 		}
 
-		sqlite3_reset(stmt)
 		self.array = array
 	}
 
