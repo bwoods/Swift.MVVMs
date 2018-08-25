@@ -33,6 +33,7 @@
 		E8BB2679212F700700F13A4F /* SQLiteValueDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BB2678212F700700F13A4F /* SQLiteValueDecoder.swift */; };
 		E8BB267B212F77D100F13A4F /* SQLiteRowDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BB267A212F77D100F13A4F /* SQLiteRowDecoder.swift */; };
 		E8BB267D212F842100F13A4F /* SQLiteQueryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BB267C212F842100F13A4F /* SQLiteQueryDecoder.swift */; };
+		E8BB26852130CF2E00F13A4F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8BB26842130CF2E00F13A4F /* Settings.bundle */; };
 		E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */; };
 		E8D52CAA2127D2D6003BE5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CA82127D2D6003BE5CC /* Main.storyboard */; };
 		E8D52CAC2127D2D7003BE5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CAB2127D2D7003BE5CC /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		E8BB2678212F700700F13A4F /* SQLiteValueDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteValueDecoder.swift; sourceTree = "<group>"; };
 		E8BB267A212F77D100F13A4F /* SQLiteRowDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteRowDecoder.swift; sourceTree = "<group>"; };
 		E8BB267C212F842100F13A4F /* SQLiteQueryDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteQueryDecoder.swift; sourceTree = "<group>"; };
+		E8BB26842130CF2E00F13A4F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E8D52CA12127D2D6003BE5CC /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		E8D52CA92127D2D6003BE5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,13 +128,6 @@
 			path = Differ/Sources/Differ;
 			sourceTree = "<group>";
 		};
-		E8BB2670212F46C400F13A4F /* Model View ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model View ViewModel";
-			sourceTree = "<group>";
-		};
 		E8BB2677212F6FCC00F13A4F /* Decoder */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +146,6 @@
 				E8D52CA32127D2D6003BE5CC /* Application */,
 				E8BB2677212F6FCC00F13A4F /* Decoder */,
 				E84CB096212F4511006B6024 /* Bindings */,
-				E8BB2670212F46C400F13A4F /* Model View ViewModel */,
 				E89BDF6A212A83D40066D930 /* Differ */,
 				E8D52CB62127D7A1003BE5CC /* sqlite₃ */,
 				E8D52CA22127D2D6003BE5CC /* Products */,
@@ -176,6 +170,7 @@
 				E8D52CC02127D821003BE5CC /* ApplicationBridging.h */,
 				E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */,
 				E8D52CB02127D2D7003BE5CC /* Info.plist */,
+				E8BB26842130CF2E00F13A4F /* Settings.bundle */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -200,6 +195,7 @@
 				E8D52C9D2127D2D6003BE5CC /* Sources */,
 				E8D52C9E2127D2D6003BE5CC /* Frameworks */,
 				E8D52C9F2127D2D6003BE5CC /* Resources */,
+				E80327CA2131336200FD26C4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,6 +247,7 @@
 			files = (
 				E8D52CAC2127D2D7003BE5CC /* Assets.xcassets in Resources */,
 				E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */,
+				E8BB26852130CF2E00F13A4F /* Settings.bundle in Resources */,
 				E8D52CAF2127D2D7003BE5CC /* LaunchScreen.storyboard in Resources */,
 				E8D52CAA2127D2D6003BE5CC /* Main.storyboard in Resources */,
 			);
@@ -259,6 +256,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		E80327CA2131336200FD26C4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "# add the version info to the Settings.bundle\nGitVersion=$(git describe --dirty=+ --tags --always)\nCFBundleShortVersionString=$(defaults read ${CODESIGNING_FOLDER_PATH}/Info CFBundleShortVersionString)\nplutil -insert PreferenceSpecifiers.0 -xml \"<dict><key>DefaultValue</key><string>${CFBundleShortVersionString} (${GitVersion})</string><key>Key</key><string>Version</string><key>Title</key><string>Version</string><key>Type</key><string>PSTitleValueSpecifier</string></dict>\" ${CODESIGNING_FOLDER_PATH}/Settings.bundle/Root.plist\n\n# ensure the Settings.bundle has all the Open Source licenses\nenv -i swift Application/Acknowledgements.swift > $CODESIGNING_FOLDER_PATH/Settings.bundle/Acknowledgements.plist\n";
+			showEnvVarsInLog = 0;
+		};
 		E8A72021212DF4F700FC2020 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
