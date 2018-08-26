@@ -13,6 +13,7 @@
 		E84CB0A0212F4511006B6024 /* SQLiteTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */; };
 		E84CB0A1212F4511006B6024 /* SQLiteWindow+Schemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09B212F4511006B6024 /* SQLiteWindow+Schemas.swift */; };
 		E84CB0A2212F4511006B6024 /* SQLiteWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09C212F4511006B6024 /* SQLiteWindow.swift */; };
+		E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
 		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
 		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
@@ -48,6 +49,7 @@
 		E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewDataSource.swift; sourceTree = "<group>"; };
 		E84CB09B212F4511006B6024 /* SQLiteWindow+Schemas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteWindow+Schemas.swift"; sourceTree = "<group>"; };
 		E84CB09C212F4511006B6024 /* SQLiteWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWindow.swift; sourceTree = "<group>"; };
+		E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
 		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
 		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				E84CB098212F4511006B6024 /* SQLiteQuery+NSValue.swift */,
 				E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */,
 				E84CB099212F4511006B6024 /* SQLiteSectionedTableViewDatasource.swift */,
+				E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */,
 			);
 			path = Bindings;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				E89BDF7E212A83D40066D930 /* Diff.swift in Sources */,
 				E8BB267B212F77D100F13A4F /* SQLiteRowDecoder.swift in Sources */,
 				E84CB0A0212F4511006B6024 /* SQLiteTableViewDataSource.swift in Sources */,
+				E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */,
 				E84CB0A2212F4511006B6024 /* SQLiteWindow.swift in Sources */,
 				E89BDF81212A83D40066D930 /* Patch.swift in Sources */,
 				E8BB2672212F46E400F13A4F /* SQLiteDecoder.swift in Sources */,
