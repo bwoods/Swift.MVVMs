@@ -16,7 +16,7 @@ let SQLITE_TRANSIENT = unsafeBitCast(OpaquePointer(bitPattern: -1), to: sqlite3_
 
 */
 class SQLiteWindow : Window {
-	var db = OpaquePointer(bitPattern: 0) {
+	var db: OpaquePointer! = OpaquePointer(bitPattern: 0) {
 		didSet {
 			sqlite3_exec(db, "PRAGMA foreign_keys = TRUE", nil, nil, nil)
 			sqlite3_update_hook(db, { (pointer, type, database, table, rowid) in
@@ -51,7 +51,7 @@ class SQLiteWindow : Window {
 			}
 
 			sqlite3_close_v2(self.db)
-			self.db = db
+			self.db = db!
 		}
 	}
 }
