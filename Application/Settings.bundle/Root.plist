@@ -12,6 +12,28 @@
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
+		<!--dict>
+			<key>Type</key>
+			<string>PSRadioGroupSpecifier</string>
+			<key>Title</key>
+			<string>Image Importing</string>
+			<key>Key</key>
+			<string>preferredLossyImageFormat</string>
+			<key>DefaultValue</key>
+			<string>JPEG</string>
+			<key>Titles</key>
+			<array>
+				<string>High Efficiency</string>
+				<string>Most Compatible</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>HEIF</string>
+				<string>JPEG</string>
+			</array>
+			<key>FooterText</key>
+			<string>To reduce file size, imported JPEGs can be converted into the high efficiency HEIF format. Most Compatible will use the original JPEG instead.</string>
+		</dict-->
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

@@ -13,7 +13,12 @@
 		E84CB0A0212F4511006B6024 /* SQLiteTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */; };
 		E84CB0A1212F4511006B6024 /* SQLiteWindow+Schemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09B212F4511006B6024 /* SQLiteWindow+Schemas.swift */; };
 		E84CB0A2212F4511006B6024 /* SQLiteWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CB09C212F4511006B6024 /* SQLiteWindow.swift */; };
+		E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */; };
 		E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */; };
+		E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */; };
+		E86E359B21324B550046E9F8 /* TintedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E359A21324B550046E9F8 /* TintedLabel.swift */; };
+		E86E359F21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */; };
+		E86E35A121332A530046E9F8 /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35A021332A520046E9F8 /* DateLabel.swift */; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
 		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
 		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
@@ -49,7 +54,12 @@
 		E84CB09A212F4511006B6024 /* SQLiteTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewDataSource.swift; sourceTree = "<group>"; };
 		E84CB09B212F4511006B6024 /* SQLiteWindow+Schemas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteWindow+Schemas.swift"; sourceTree = "<group>"; };
 		E84CB09C212F4511006B6024 /* SQLiteWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWindow.swift; sourceTree = "<group>"; };
+		E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+IBDesignable.swift"; path = "Application/UIView+IBDesignable.swift"; sourceTree = "<group>"; };
 		E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCollectionViewDatasource.swift; sourceTree = "<group>"; };
+		E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewAligned.swift; path = Application/UIImageViewAligned.swift; sourceTree = "<group>"; };
+		E86E359A21324B550046E9F8 /* TintedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintedLabel.swift; path = Application/TintedLabel.swift; sourceTree = "<group>"; };
+		E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+AutoSizing.swift"; sourceTree = "<group>"; };
+		E86E35A021332A520046E9F8 /* DateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateLabel.swift; path = Application/DateLabel.swift; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
 		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
 		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
@@ -94,6 +104,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E83179B3213242A400C594E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E86E35A021332A520046E9F8 /* DateLabel.swift */,
+				E86E359A21324B550046E9F8 /* TintedLabel.swift */,
+				E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */,
+				E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */,
+				E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */,
+			);
+			name = Extensions;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		E84CB096212F4511006B6024 /* Bindings */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +129,21 @@
 				E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */,
 			);
 			path = Bindings;
+			sourceTree = "<group>";
+		};
+		E86E3593213242E40046E9F8 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				E8D52CAB2127D2D7003BE5CC /* Assets.xcassets */,
+				E89BDF66212905F90066D930 /* Schemas.xcassets */,
+				E8D52CAD2127D2D7003BE5CC /* LaunchScreen.storyboard */,
+				E8D52CA82127D2D6003BE5CC /* Main.storyboard */,
+				E8D52CC02127D821003BE5CC /* ApplicationBridging.h */,
+				E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */,
+				E8D52CB02127D2D7003BE5CC /* Info.plist */,
+				E8BB26842130CF2E00F13A4F /* Settings.bundle */,
+			);
+			name = "Supporting File";
 			sourceTree = "<group>";
 		};
 		E89BDF6A212A83D40066D930 /* Differ */ = {
@@ -166,14 +204,8 @@
 		E8D52CA32127D2D6003BE5CC /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				E8D52CAB2127D2D7003BE5CC /* Assets.xcassets */,
-				E89BDF66212905F90066D930 /* Schemas.xcassets */,
-				E8D52CAD2127D2D7003BE5CC /* LaunchScreen.storyboard */,
-				E8D52CA82127D2D6003BE5CC /* Main.storyboard */,
-				E8D52CC02127D821003BE5CC /* ApplicationBridging.h */,
-				E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */,
-				E8D52CB02127D2D7003BE5CC /* Info.plist */,
-				E8BB26842130CF2E00F13A4F /* Settings.bundle */,
+				E86E3593213242E40046E9F8 /* Supporting File */,
+				E83179B3213242A400C594E4 /* Extensions */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -270,7 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "# add the version info to the Settings.bundle\nGitVersion=$(git describe --dirty=+ --tags --always)\nCFBundleShortVersionString=$(defaults read ${CODESIGNING_FOLDER_PATH}/Info CFBundleShortVersionString)\nplutil -insert PreferenceSpecifiers.0 -xml \"<dict><key>DefaultValue</key><string>${CFBundleShortVersionString} (${GitVersion})</string><key>Key</key><string>Version</string><key>Title</key><string>Version</string><key>Type</key><string>PSTitleValueSpecifier</string></dict>\" ${CODESIGNING_FOLDER_PATH}/Settings.bundle/Root.plist\n\n# ensure the Settings.bundle has all the Open Source licenses\nenv -i swift Application/Acknowledgements.swift > $CODESIGNING_FOLDER_PATH/Settings.bundle/Acknowledgements.plist\n";
+			shellScript = "# add the version info to the Settings.bundle\nGitVersion=$(git describe --dirty=+ --tags --always)\nCFBundleVersion=$(defaults read ${CODESIGNING_FOLDER_PATH}/Info CFBundleVersion)\nCFBundleShortVersionString=$(defaults read ${CODESIGNING_FOLDER_PATH}/Info CFBundleShortVersionString)\nplutil -insert PreferenceSpecifiers.0 -xml \"<dict><key>DefaultValue</key><string>${CFBundleShortVersionString}.${CFBundleVersion} (${GitVersion})</string><key>Key</key><string>Version</string><key>Title</key><string>Version</string><key>Type</key><string>PSTitleValueSpecifier</string></dict>\" ${CODESIGNING_FOLDER_PATH}/Settings.bundle/Root.plist\n\n# ensure the Settings.bundle has all the Open Source licenses\nenv -i swift Application/Acknowledgements.swift > $CODESIGNING_FOLDER_PATH/Settings.bundle/Acknowledgements.plist\n";
 			showEnvVarsInLog = 0;
 		};
 		E8A72021212DF4F700FC2020 /* ShellScript */ = {
@@ -305,6 +337,7 @@
 				E89BDF7D212A83D40066D930 /* Diff+UIKit.swift in Sources */,
 				E89BDF88212A83D40066D930 /* LinkedList.swift in Sources */,
 				E8BB2674212F4FC100F13A4F /* SQLiteDecoderFunctions.swift in Sources */,
+				E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */,
 				E84CB09F212F4511006B6024 /* SQLiteSectionedTableViewDatasource.swift in Sources */,
 				E89BDF7F212A83D40066D930 /* NestedDiff.swift in Sources */,
 				E84CB09D212F4511006B6024 /* SQLiteQuery.swift in Sources */,
@@ -312,10 +345,14 @@
 				E89BDF86212A83D40066D930 /* Patch+Sort.swift in Sources */,
 				E8BB2679212F700700F13A4F /* SQLiteValueDecoder.swift in Sources */,
 				E89BDF84212A83D40066D930 /* BatchUpdate.swift in Sources */,
+				E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */,
 				E89BDF85212A83D40066D930 /* Patch+Apply.swift in Sources */,
 				E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */,
 				E89BDF80212A83D40066D930 /* GenericPatch.swift in Sources */,
 				E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */,
+				E86E35A121332A530046E9F8 /* DateLabel.swift in Sources */,
+				E86E359F21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift in Sources */,
+				E86E359B21324B550046E9F8 /* TintedLabel.swift in Sources */,
 				E89BDF83212A83D40066D930 /* NestedBatchUpdate.swift in Sources */,
 				E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */,
 				E89BDF87212A83D40066D930 /* ExtendedPatch+Apply.swift in Sources */,
