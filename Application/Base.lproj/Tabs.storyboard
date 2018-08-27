@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HB7-lp-J3M">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jhK-4X-OTX">
+            <objects>
+                <tabBarController storyboardIdentifier="Tabs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HB7-lp-J3M" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2LE-Wm-Ng5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sUE-Bd-dwk" kind="relationship" relationship="viewControllers" id="KBS-UF-c7n"/>
+                        <segue destination="XOd-Jj-A8K" kind="relationship" relationship="viewControllers" id="U2u-Be-5dZ"/>
+                        <segue destination="wta-cl-Zpr" kind="relationship" relationship="viewControllers" id="0xU-1M-DYE"/>
+                        <segue destination="qQm-dT-pse" kind="relationship" relationship="viewControllers" id="YJg-GT-Rbq"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdd-Bm-5rp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Resume-->
+        <scene sceneID="LoX-lP-4Go">
+            <objects>
+                <navigationController storyboardIdentifier="Resume Navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" hidesBarsWhenVerticallyCompact="YES" id="sUE-Bd-dwk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Resume" image="Recent" id="dPz-l4-Vi3"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="aRP-PK-hnt">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EjM-7Y-PqM" kind="relationship" relationship="rootViewController" id="WdI-lI-KgL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZz-tb-Qsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="0.0"/>
+        </scene>
+        <!--Resume-->
+        <scene sceneID="17q-uM-fcN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Resume" id="EjM-7Y-PqM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4dm-hH-o1k"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="At0-yg-xRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="-405"/>
+        </scene>
+        <!--Browse-->
+        <scene sceneID="KHV-hY-qdp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Browse" id="gq2-15-WDv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ygx-f5-qhc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1V-rO-hVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600" y="-405"/>
+        </scene>
+        <!--Browse-->
+        <scene sceneID="no7-us-2yp">
+            <objects>
+                <navigationController storyboardIdentifier="Browse Navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" hidesBarsWhenVerticallyCompact="YES" id="XOd-Jj-A8K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Browse" image="Browse" id="h8Y-wL-ffk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="vmH-kO-8hc">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gq2-15-WDv" kind="relationship" relationship="rootViewController" id="z0k-mf-6V3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6af-oB-eff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600" y="0.0"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="mmU-U1-CPK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="p83-Re-t0t" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QMs-Jy-ZK2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgd-Yi-9tO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2401" y="-407"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="ZMw-ft-ZHe">
+            <objects>
+                <navigationController storyboardIdentifier="Search Navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wta-cl-Zpr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="fDw-5H-CKY"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2bl-Kh-Nam">
+                        <rect key="frame" x="0.0" y="20" width="320" height="93"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="p83-Re-t0t" kind="relationship" relationship="rootViewController" id="B71-ej-6if"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbE-V1-i2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2400" y="0.0"/>
+        </scene>
+        <!--Journal-->
+        <scene sceneID="ngh-Pc-NoH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Journal" id="cTa-ls-yvg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NYo-fj-yzi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPo-hk-4g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3200" y="-406"/>
+        </scene>
+        <!--Shortcuts-->
+        <scene sceneID="9uq-ln-SgT">
+            <objects>
+                <navigationController storyboardIdentifier="Journal Navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" hidesBarsOnSwipe="YES" hidesBarsWhenVerticallyCompact="YES" id="qQm-dT-pse" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Shortcuts" image="Star" id="fsX-rD-oGZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="LC5-7H-yZV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cTa-ls-yvg" kind="relationship" relationship="rootViewController" id="cYP-LN-Zjl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3i0-tQ-5Ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3200" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Browse" width="23" height="21"/>
+        <image name="Recent" width="23" height="23"/>
+        <image name="Search" width="23" height="23"/>
+        <image name="Star" width="22" height="21"/>
+    </resources>
+</document>

@@ -5,6 +5,7 @@ class SQLiteQuery: NSObject {
 	var array: [[String : NSObject]] = [ ]
 
 	var keys: [String] = [ ]
+	var db: OpaquePointer! { return sqlite3_db_handle(stmt) }
 	var stmt = OpaquePointer(bitPattern: 0) {
 		didSet {
 			var tables: Set<String> = [ ]
@@ -29,6 +30,22 @@ class SQLiteQuery: NSObject {
 	@IBInspectable
 	var query: String! { didSet { reloadData() } }
 
+//	@IBInspectable
+//	var insertionSurrogateKey: String?
+	@IBAction func insert(_ sender: AnyObject) {
+//		assert(insertionSurrogateKey != nil && insertionSurrogateKey!.count > 0)
+
+		self.query.withCString { query in
+//			self.insertionSurrogateKey!.withCString { column in
+				let sql = withVaList([ query ]) { args in return sqlite3_vmprintf("INSERT INTO %s DEFAULT VALUES", args) }; defer { sqlite3_free(sql) }
+				print(String(cString: sql!))
+				if sqlite3_exec(db, sql, nil, nil, nil) != SQLITE_OK {
+					fatalError(String(cString: sqlite3_errmsg(db)))
+				}
+//			}
+		}
+	}
+
 // MARK: -
 	func reloadData() {
 		guard query != nil && owner != nil else {
@@ -38,9 +55,16 @@ class SQLiteQuery: NSObject {
 		guard stmt != OpaquePointer(bitPattern: 0) else {
 			DispatchQueue.main.async { // awakeFromNib sets key-values before the view is in the window
 				let selector = Selector(("window")) // double parens remove the compiler warning about an arbitrary method selector
-				let window = self.owner!.perform(selector).takeUnretainedValue() as! SQLiteWindow
-				let db = window.db
+				let window = self.owner!.perform(selector)?.takeUnretainedValue() as? SQLiteWindow
 
+				guard window != nil else {
+					DispatchQueue.main.async {
+						self.reloadData() // owner is not actually in a window yet; try next cycle…
+					}
+					return
+				}
+
+				let db = window!.db
 				var stmt = OpaquePointer(bitPattern: 0)
 				self.query.withCString { cString in
 					let sql = withVaList([ cString ]) { args in return sqlite3_vmprintf("SELECT * FROM (%s)", args) }; defer { sqlite3_free(sql) }

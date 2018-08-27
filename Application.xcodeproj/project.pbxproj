@@ -24,6 +24,12 @@
 		E86E35BA213345770046E9F8 /* SQLiteTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35AE213345760046E9F8 /* SQLiteTableViewDataSource.swift */; };
 		E86E35BB213345770046E9F8 /* SQLiteWindow+Schemas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35AF213345760046E9F8 /* SQLiteWindow+Schemas.swift */; };
 		E86E35BC213345770046E9F8 /* SQLiteWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35B0213345760046E9F8 /* SQLiteWindow.swift */; };
+		E86E35BF213484130046E9F8 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35BD213484130046E9F8 /* Tabs.storyboard */; };
+		E86E35C22134849C0046E9F8 /* Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C02134849C0046E9F8 /* Resume.storyboard */; };
+		E86E35C5213485130046E9F8 /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C3213485130046E9F8 /* Browse.storyboard */; };
+		E86E35C82134862A0046E9F8 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C62134862A0046E9F8 /* Search.storyboard */; };
+		E86E35CB2134863F0046E9F8 /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C92134863F0046E9F8 /* Journal.storyboard */; };
+		E86E35D02134F1390046E9F8 /* SearchControllerNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
 		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
 		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
@@ -65,6 +71,12 @@
 		E86E35AE213345760046E9F8 /* SQLiteTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteTableViewDataSource.swift; sourceTree = "<group>"; };
 		E86E35AF213345760046E9F8 /* SQLiteWindow+Schemas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SQLiteWindow+Schemas.swift"; sourceTree = "<group>"; };
 		E86E35B0213345760046E9F8 /* SQLiteWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteWindow.swift; sourceTree = "<group>"; };
+		E86E35BE213484130046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabs.storyboard; sourceTree = "<group>"; };
+		E86E35C12134849C0046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resume.storyboard; sourceTree = "<group>"; };
+		E86E35C4213485130046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Browse.storyboard; sourceTree = "<group>"; };
+		E86E35C72134862A0046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		E86E35CA2134863F0046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Journal.storyboard; sourceTree = "<group>"; };
+		E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchControllerNavigationItem.swift; path = Application/SearchControllerNavigationItem.swift; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
 		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
 		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
@@ -110,6 +122,7 @@
 				E86E35A021332A520046E9F8 /* DateLabel.swift */,
 				E86E359A21324B550046E9F8 /* TintedLabel.swift */,
 				E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */,
+				E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */,
 				E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */,
 				E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */,
 			);
@@ -124,6 +137,11 @@
 				E89BDF66212905F90066D930 /* Schemas.xcassets */,
 				E8D52CAD2127D2D7003BE5CC /* LaunchScreen.storyboard */,
 				E8D52CA82127D2D6003BE5CC /* Main.storyboard */,
+				E86E35BD213484130046E9F8 /* Tabs.storyboard */,
+				E86E35C02134849C0046E9F8 /* Resume.storyboard */,
+				E86E35C3213485130046E9F8 /* Browse.storyboard */,
+				E86E35C62134862A0046E9F8 /* Search.storyboard */,
+				E86E35C92134863F0046E9F8 /* Journal.storyboard */,
 				E8D52CC02127D821003BE5CC /* ApplicationBridging.h */,
 				E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */,
 				E8D52CB02127D2D7003BE5CC /* Info.plist */,
@@ -290,8 +308,13 @@
 			files = (
 				E8D52CAC2127D2D7003BE5CC /* Assets.xcassets in Resources */,
 				E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */,
+				E86E35C5213485130046E9F8 /* Browse.storyboard in Resources */,
 				E8BB26852130CF2E00F13A4F /* Settings.bundle in Resources */,
+				E86E35CB2134863F0046E9F8 /* Journal.storyboard in Resources */,
+				E86E35C82134862A0046E9F8 /* Search.storyboard in Resources */,
 				E8D52CAF2127D2D7003BE5CC /* LaunchScreen.storyboard in Resources */,
+				E86E35BF213484130046E9F8 /* Tabs.storyboard in Resources */,
+				E86E35C22134849C0046E9F8 /* Resume.storyboard in Resources */,
 				E8D52CAA2127D2D6003BE5CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +371,7 @@
 				E89BDF84212A83D40066D930 /* BatchUpdate.swift in Sources */,
 				E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */,
 				E86E35B1213345770046E9F8 /* SQLiteDecoderFunctions.swift in Sources */,
+				E86E35D02134F1390046E9F8 /* SearchControllerNavigationItem.swift in Sources */,
 				E86E35BB213345770046E9F8 /* SQLiteWindow+Schemas.swift in Sources */,
 				E89BDF85212A83D40066D930 /* Patch+Apply.swift in Sources */,
 				E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */,
@@ -373,6 +397,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E86E35BD213484130046E9F8 /* Tabs.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E86E35BE213484130046E9F8 /* Base */,
+			);
+			name = Tabs.storyboard;
+			sourceTree = "<group>";
+		};
+		E86E35C02134849C0046E9F8 /* Resume.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E86E35C12134849C0046E9F8 /* Base */,
+			);
+			name = Resume.storyboard;
+			sourceTree = "<group>";
+		};
+		E86E35C3213485130046E9F8 /* Browse.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E86E35C4213485130046E9F8 /* Base */,
+			);
+			name = Browse.storyboard;
+			sourceTree = "<group>";
+		};
+		E86E35C62134862A0046E9F8 /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E86E35C72134862A0046E9F8 /* Base */,
+			);
+			name = Search.storyboard;
+			sourceTree = "<group>";
+		};
+		E86E35C92134863F0046E9F8 /* Journal.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E86E35CA2134863F0046E9F8 /* Base */,
+			);
+			name = Journal.storyboard;
+			sourceTree = "<group>";
+		};
 		E8D52CA82127D2D6003BE5CC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -511,15 +575,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = $SRCROOT;
 				INFOPLIST_FILE = Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.bwoods.MVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Application/ApplicationBridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -532,15 +600,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = $SRCROOT;
 				INFOPLIST_FILE = Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.bwoods.MVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Application/ApplicationBridging.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -229,7 +229,7 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="xy3-YU-tpb" kind="relationship" relationship="rootViewController" id="KtZ-0d-VxB"/>
+                        <segue destination="xy3-YU-tpb" kind="relationship" relationship="rootViewController" id="BNV-fj-oXd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfD-PP-vzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,11 +328,23 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="X8h-WC-AbW"/>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="organize" id="UJW-ft-VOA"/>
-                            <barButtonItem systemItem="add" id="TYx-i2-Y7e"/>
+                            <barButtonItem systemItem="add" id="TYx-i2-Y7e">
+                                <connections>
+                                    <action selector="insert:" destination="VDu-AE-fUD" id="CFm-Pc-n2k"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZ1-mG-NHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="VDu-AE-fUD" customClass="SQLiteCollectionViewDatasource" customModule="MVVM" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="query" value="'document view'"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="owner" destination="894-PV-qk6" id="Hnl-sg-05J"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="139" y="1574"/>
         </scene>
