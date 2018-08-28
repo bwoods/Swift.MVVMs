@@ -28,8 +28,11 @@
 		E86E35C22134849C0046E9F8 /* Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C02134849C0046E9F8 /* Resume.storyboard */; };
 		E86E35C5213485130046E9F8 /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C3213485130046E9F8 /* Browse.storyboard */; };
 		E86E35C82134862A0046E9F8 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C62134862A0046E9F8 /* Search.storyboard */; };
-		E86E35CB2134863F0046E9F8 /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C92134863F0046E9F8 /* Journal.storyboard */; };
+		E86E35CB2134863F0046E9F8 /* Shortcuts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86E35C92134863F0046E9F8 /* Shortcuts.storyboard */; };
 		E86E35D02134F1390046E9F8 /* SearchControllerNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */; };
+		E86E35DB2135E0880046E9F8 /* LUNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E86E35D42135E0880046E9F8 /* LUNTabBarController.m */; settings = {COMPILER_FLAGS = "-Wno-documentation"; }; };
+		E86E35DC2135E0880046E9F8 /* LUNTabBarAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E86E35D72135E0880046E9F8 /* LUNTabBarAnimationController.m */; settings = {COMPILER_FLAGS = "-Wno-documentation"; }; };
+		E86E35DF2135E8AC0046E9F8 /* ApplicationTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */; settings = {COMPILER_FLAGS = "-Wno-documentation"; }; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
 		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
 		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
@@ -75,8 +78,15 @@
 		E86E35C12134849C0046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resume.storyboard; sourceTree = "<group>"; };
 		E86E35C4213485130046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Browse.storyboard; sourceTree = "<group>"; };
 		E86E35C72134862A0046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
-		E86E35CA2134863F0046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Journal.storyboard; sourceTree = "<group>"; };
+		E86E35CA2134863F0046E9F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shortcuts.storyboard; sourceTree = "<group>"; };
 		E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchControllerNavigationItem.swift; path = Application/SearchControllerNavigationItem.swift; sourceTree = "<group>"; };
+		E86E35D32135E0880046E9F8 /* LUNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTabBarController.h; sourceTree = "<group>"; };
+		E86E35D42135E0880046E9F8 /* LUNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNTabBarController.m; sourceTree = "<group>"; };
+		E86E35D62135E0880046E9F8 /* LUNTabBarAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTabBarAnimationController.h; sourceTree = "<group>"; };
+		E86E35D72135E0880046E9F8 /* LUNTabBarAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUNTabBarAnimationController.m; sourceTree = "<group>"; };
+		E86E35D82135E0880046E9F8 /* LUNTabBarAnimationController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUNTabBarAnimationController+Private.h"; sourceTree = "<group>"; };
+		E86E35DA2135E0880046E9F8 /* LUNTabBarFloatingControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTabBarFloatingControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationTabBarController.m; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
 		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
 		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
@@ -141,9 +151,10 @@
 				E86E35C02134849C0046E9F8 /* Resume.storyboard */,
 				E86E35C3213485130046E9F8 /* Browse.storyboard */,
 				E86E35C62134862A0046E9F8 /* Search.storyboard */,
-				E86E35C92134863F0046E9F8 /* Journal.storyboard */,
+				E86E35C92134863F0046E9F8 /* Shortcuts.storyboard */,
 				E8D52CC02127D821003BE5CC /* ApplicationBridging.h */,
 				E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */,
+				E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */,
 				E8D52CB02127D2D7003BE5CC /* Info.plist */,
 				E8BB26842130CF2E00F13A4F /* Settings.bundle */,
 			);
@@ -185,6 +196,44 @@
 			path = Bindings;
 			sourceTree = "<group>";
 		};
+		E86E35D12135E0880046E9F8 /* LUNTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				E86E35D22135E0880046E9F8 /* LUNTabBarController */,
+				E86E35D52135E0880046E9F8 /* LUNTabBarAnimationController */,
+				E86E35D92135E0880046E9F8 /* LUNTabBarFloatingControllerAnimatedTransitioning */,
+			);
+			name = LUNTabBarController;
+			path = LUNTabBarController/LUNTabBarController;
+			sourceTree = "<group>";
+		};
+		E86E35D22135E0880046E9F8 /* LUNTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				E86E35D32135E0880046E9F8 /* LUNTabBarController.h */,
+				E86E35D42135E0880046E9F8 /* LUNTabBarController.m */,
+			);
+			path = LUNTabBarController;
+			sourceTree = "<group>";
+		};
+		E86E35D52135E0880046E9F8 /* LUNTabBarAnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				E86E35D62135E0880046E9F8 /* LUNTabBarAnimationController.h */,
+				E86E35D72135E0880046E9F8 /* LUNTabBarAnimationController.m */,
+				E86E35D82135E0880046E9F8 /* LUNTabBarAnimationController+Private.h */,
+			);
+			path = LUNTabBarAnimationController;
+			sourceTree = "<group>";
+		};
+		E86E35D92135E0880046E9F8 /* LUNTabBarFloatingControllerAnimatedTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				E86E35DA2135E0880046E9F8 /* LUNTabBarFloatingControllerAnimatedTransitioning.h */,
+			);
+			path = LUNTabBarFloatingControllerAnimatedTransitioning;
+			sourceTree = "<group>";
+		};
 		E89BDF6A212A83D40066D930 /* Differ */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +263,7 @@
 				E8D52CA32127D2D6003BE5CC /* Application */,
 				E86E35A2213345760046E9F8 /* Model View ViewModel */,
 				E89BDF6A212A83D40066D930 /* Differ */,
+				E86E35D12135E0880046E9F8 /* LUNTabBarController */,
 				E8D52CB62127D7A1003BE5CC /* sqlite₃ */,
 				E8D52CA22127D2D6003BE5CC /* Products */,
 			);
@@ -310,7 +360,7 @@
 				E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */,
 				E86E35C5213485130046E9F8 /* Browse.storyboard in Resources */,
 				E8BB26852130CF2E00F13A4F /* Settings.bundle in Resources */,
-				E86E35CB2134863F0046E9F8 /* Journal.storyboard in Resources */,
+				E86E35CB2134863F0046E9F8 /* Shortcuts.storyboard in Resources */,
 				E86E35C82134862A0046E9F8 /* Search.storyboard in Resources */,
 				E8D52CAF2127D2D7003BE5CC /* LaunchScreen.storyboard in Resources */,
 				E86E35BF213484130046E9F8 /* Tabs.storyboard in Resources */,
@@ -357,40 +407,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E86E35BA213345770046E9F8 /* SQLiteTableViewDataSource.swift in Sources */,
 				E8D52CC22127D821003BE5CC /* sqlite3.c in Sources */,
 				E89BDF7E212A83D40066D930 /* Diff.swift in Sources */,
-				E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */,
 				E89BDF81212A83D40066D930 /* Patch.swift in Sources */,
 				E89BDF7D212A83D40066D930 /* Diff+UIKit.swift in Sources */,
 				E89BDF88212A83D40066D930 /* LinkedList.swift in Sources */,
-				E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */,
 				E89BDF7F212A83D40066D930 /* NestedDiff.swift in Sources */,
-				E86E35B5213345770046E9F8 /* SQLiteValueDecoder.swift in Sources */,
 				E89BDF86212A83D40066D930 /* Patch+Sort.swift in Sources */,
 				E89BDF84212A83D40066D930 /* BatchUpdate.swift in Sources */,
-				E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */,
-				E86E35B1213345770046E9F8 /* SQLiteDecoderFunctions.swift in Sources */,
-				E86E35D02134F1390046E9F8 /* SearchControllerNavigationItem.swift in Sources */,
-				E86E35BB213345770046E9F8 /* SQLiteWindow+Schemas.swift in Sources */,
 				E89BDF85212A83D40066D930 /* Patch+Apply.swift in Sources */,
 				E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */,
-				E86E35B2213345770046E9F8 /* SQLiteDecoder.swift in Sources */,
 				E89BDF80212A83D40066D930 /* GenericPatch.swift in Sources */,
-				E86E35B9213345770046E9F8 /* SQLiteSectionedTableViewDatasource.swift in Sources */,
 				E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */,
-				E86E35B4213345770046E9F8 /* SQLiteRowDecoder.swift in Sources */,
-				E86E35A121332A530046E9F8 /* DateLabel.swift in Sources */,
-				E86E35B8213345770046E9F8 /* SQLiteQuery+NSValue.swift in Sources */,
-				E86E35B7213345770046E9F8 /* SQLiteQuery.swift in Sources */,
-				E86E35BC213345770046E9F8 /* SQLiteWindow.swift in Sources */,
-				E86E35B3213345770046E9F8 /* SQLiteQueryDecoder.swift in Sources */,
-				E86E359F21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift in Sources */,
-				E86E359B21324B550046E9F8 /* TintedLabel.swift in Sources */,
 				E89BDF83212A83D40066D930 /* NestedBatchUpdate.swift in Sources */,
 				E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */,
 				E89BDF87212A83D40066D930 /* ExtendedPatch+Apply.swift in Sources */,
+				E86E35B7213345770046E9F8 /* SQLiteQuery.swift in Sources */,
+				E86E35BC213345770046E9F8 /* SQLiteWindow.swift in Sources */,
+				E86E35B8213345770046E9F8 /* SQLiteQuery+NSValue.swift in Sources */,
+				E86E35BB213345770046E9F8 /* SQLiteWindow+Schemas.swift in Sources */,
+				E86E35BA213345770046E9F8 /* SQLiteTableViewDataSource.swift in Sources */,
+				E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */,
+				E86E35B9213345770046E9F8 /* SQLiteSectionedTableViewDatasource.swift in Sources */,
+				E86E35B2213345770046E9F8 /* SQLiteDecoder.swift in Sources */,
+				E86E35B4213345770046E9F8 /* SQLiteRowDecoder.swift in Sources */,
+				E86E35B5213345770046E9F8 /* SQLiteValueDecoder.swift in Sources */,
+				E86E35B3213345770046E9F8 /* SQLiteQueryDecoder.swift in Sources */,
+				E86E35B1213345770046E9F8 /* SQLiteDecoderFunctions.swift in Sources */,
+				E86E35DB2135E0880046E9F8 /* LUNTabBarController.m in Sources */,
+				E86E35DC2135E0880046E9F8 /* LUNTabBarAnimationController.m in Sources */,
+				E86E35DF2135E8AC0046E9F8 /* ApplicationTabBarController.m in Sources */,
 				E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */,
+				E86E35A121332A530046E9F8 /* DateLabel.swift in Sources */,
+				E86E359B21324B550046E9F8 /* TintedLabel.swift in Sources */,
+				E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */,
+				E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */,
+				E86E359F21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift in Sources */,
+				E86E35D02134F1390046E9F8 /* SearchControllerNavigationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,12 +482,12 @@
 			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
-		E86E35C92134863F0046E9F8 /* Journal.storyboard */ = {
+		E86E35C92134863F0046E9F8 /* Shortcuts.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E86E35CA2134863F0046E9F8 /* Base */,
 			);
-			name = Journal.storyboard;
+			name = Shortcuts.storyboard;
 			sourceTree = "<group>";
 		};
 		E8D52CA82127D2D6003BE5CC /* Main.storyboard */ = {

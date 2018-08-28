@@ -6,23 +6,39 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Application Tab Bar Controller-->
         <scene sceneID="jhK-4X-OTX">
             <objects>
-                <tabBarController storyboardIdentifier="Tabs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HB7-lp-J3M" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tabs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HB7-lp-J3M" customClass="ApplicationTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2LE-Wm-Ng5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="floatingTabIndex">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionAlphaMultiplier">
+                            <real key="value" value="0.40000000000000002"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                            <real key="value" value="0.375"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionScaleMultiplier">
+                            <real key="value" value="0.88"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="sUE-Bd-dwk" kind="relationship" relationship="viewControllers" id="KBS-UF-c7n"/>
                         <segue destination="XOd-Jj-A8K" kind="relationship" relationship="viewControllers" id="U2u-Be-5dZ"/>
                         <segue destination="wta-cl-Zpr" kind="relationship" relationship="viewControllers" id="0xU-1M-DYE"/>
-                        <segue destination="qQm-dT-pse" kind="relationship" relationship="viewControllers" id="YJg-GT-Rbq"/>
+                        <segue destination="xcy-Qq-OrB" kind="relationship" relationship="viewControllers" id="Zxo-Yu-Q3A"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdd-Bm-5rp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,38 +129,101 @@
             </objects>
             <point key="canvasLocation" x="2400" y="0.0"/>
         </scene>
-        <!--Journal-->
-        <scene sceneID="ngh-Pc-NoH">
+        <!--Shortcuts-->
+        <scene sceneID="AG2-g6-RQS">
             <objects>
-                <viewControllerPlaceholder storyboardName="Journal" id="cTa-ls-yvg" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="NYo-fj-yzi"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yPo-hk-4g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Shortcuts" id="k95-HI-i9M" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJM-1A-t1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3200" y="-406"/>
+            <point key="canvasLocation" x="3199" y="-408"/>
         </scene>
         <!--Shortcuts-->
-        <scene sceneID="9uq-ln-SgT">
+        <scene sceneID="FnT-hy-9pf">
             <objects>
-                <navigationController storyboardIdentifier="Journal Navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" hidesBarsOnSwipe="YES" hidesBarsWhenVerticallyCompact="YES" id="qQm-dT-pse" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shortcuts" image="Star" id="fsX-rD-oGZ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="LC5-7H-yZV">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </navigationBar>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="xcy-Qq-OrB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eND-sZ-aTn"/>
+                        <viewControllerLayoutGuide type="bottom" id="CnV-wu-L8E"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1tK-lT-3HN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8K-rF-ncM">
+                                <rect key="frame" x="0.0" y="68" width="320" height="500"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAN-Ua-fvP">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                                        <connections>
+                                            <segue destination="k95-HI-i9M" kind="embed" id="f6q-aG-ZOR"/>
+                                        </connections>
+                                    </containerView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaT-3w-MjY" userLabel="“Line”">
+                                        <rect key="frame" x="145" y="9" width="30" height="3"/>
+                                        <color key="backgroundColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="jiq-gK-sGf"/>
+                                            <constraint firstAttribute="width" constant="30" id="oSe-KN-8rp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYC-Nv-vc9">
+                                        <rect key="frame" x="138" y="0.0" width="44" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="mW8-jP-Get"/>
+                                            <constraint firstAttribute="height" constant="30" id="rh9-6V-gM9"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="closeOverlay:" destination="lhO-C0-dhJ" eventType="touchUpInside" id="QgL-Yf-7sj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VYC-Nv-vc9" firstAttribute="centerX" secondItem="h8K-rF-ncM" secondAttribute="centerX" id="D78-ZR-0GM"/>
+                                    <constraint firstAttribute="bottom" secondItem="oAN-Ua-fvP" secondAttribute="bottom" id="QDp-aQ-S8E"/>
+                                    <constraint firstItem="oAN-Ua-fvP" firstAttribute="top" secondItem="h8K-rF-ncM" secondAttribute="top" id="WRa-5D-Y4F"/>
+                                    <constraint firstAttribute="trailing" secondItem="oAN-Ua-fvP" secondAttribute="trailing" id="k3j-SB-3Xg"/>
+                                    <constraint firstItem="VYC-Nv-vc9" firstAttribute="top" secondItem="h8K-rF-ncM" secondAttribute="top" id="kIL-jA-bPo"/>
+                                    <constraint firstItem="gaT-3w-MjY" firstAttribute="centerX" secondItem="h8K-rF-ncM" secondAttribute="centerX" id="qDp-lU-KNH"/>
+                                    <constraint firstItem="oAN-Ua-fvP" firstAttribute="leading" secondItem="h8K-rF-ncM" secondAttribute="leading" id="tDU-iX-0DA"/>
+                                    <constraint firstItem="gaT-3w-MjY" firstAttribute="top" secondItem="h8K-rF-ncM" secondAttribute="top" constant="9" id="tgQ-rm-Dau"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="h8K-rF-ncM" secondAttribute="bottom" id="ea1-nY-3ql"/>
+                            <constraint firstItem="h8K-rF-ncM" firstAttribute="leading" secondItem="1tK-lT-3HN" secondAttribute="leading" id="ion-jH-fbj"/>
+                            <constraint firstAttribute="trailing" secondItem="h8K-rF-ncM" secondAttribute="trailing" id="k99-EW-n9D"/>
+                            <constraint firstItem="h8K-rF-ncM" firstAttribute="height" secondItem="1tK-lT-3HN" secondAttribute="height" multiplier="500:568" id="nWp-ol-6hg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AaC-VD-rnl"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZZn-7M-b2e" appends="YES" id="3jO-za-tDN"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Shortcuts" image="Star" id="ViG-1L-qRG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhO-C0-dhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="ZZn-7M-b2e">
                     <connections>
-                        <segue destination="cTa-ls-yvg" kind="relationship" relationship="rootViewController" id="cYP-LN-Zjl"/>
+                        <action selector="closeOverlay:" destination="lhO-C0-dhJ" id="v4x-4F-DmW"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3i0-tQ-5Ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3200" y="0.0"/>
+            <point key="canvasLocation" x="3198.75" y="0.0"/>
         </scene>
     </scenes>
     <resources>
         <image name="Browse" width="23" height="21"/>
         <image name="Recent" width="23" height="23"/>
         <image name="Search" width="23" height="23"/>
-        <image name="Star" width="22" height="21"/>
+        <image name="Star" width="28" height="26"/>
     </resources>
 </document>

@@ -34,13 +34,14 @@ class SearchControllerNavigationItem: UINavigationItem {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 
-		let tableViewController = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as! UITableViewController
-		self.searchController = UISearchController(searchResultsController: tableViewController)
-		self.searchController!.definesPresentationContext = true
+//		let tableViewController = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as! UITableViewController
+//		self.searchController = UISearchController(searchResultsController: tableViewController)
+
+		self.searchController = UISearchController(searchResultsController: nil)
+//		self.searchController!.definesPresentationContext = true
 
 		self.searchController!.hidesNavigationBarDuringPresentation = false
 		self.searchController!.obscuresBackgroundDuringPresentation = false
-//		self.searchController!.searchBar.searchBarStyle = .minimal
 		self.searchController!.searchBar.autocapitalizationType = .none
 		self.searchController!.searchBar.autocorrectionType = .no
 		self.searchController!.searchBar.keyboardType = .webSearch // .URL has no space bar
@@ -48,9 +49,9 @@ class SearchControllerNavigationItem: UINavigationItem {
 		self.searchController!.searchBar.showsCancelButton = false // searchController handles Cancel
 		self.searchController!.searchResultsUpdater = searchResultsUpdater
 
-		tableViewController.tableView.dataSource = searchResultsUpdater
-		tableViewController.tableView.delegate = searchResultsUpdater
-		searchResultsUpdater?.tableView = tableViewController.tableView
+//		tableViewController.tableView.dataSource = searchResultsUpdater
+//		tableViewController.tableView.delegate = searchResultsUpdater
+//		searchResultsUpdater?.tableView = tableViewController.tableView
 	}
 
 }
