@@ -1,3 +1,6 @@
 [submodule "Differ"]
 	path = Differ
 	url = https://github.com/tonyarnold/Differ.git
+[submodule "LUNTabBarController"]
+	path = LUNTabBarController
+	url = https://github.com/LunAppsMobile/LUNTabBarController.git
