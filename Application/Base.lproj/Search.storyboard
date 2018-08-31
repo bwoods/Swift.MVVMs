@@ -40,7 +40,18 @@
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0K-MK-c69" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="dsr-Ls-NmJ" customClass="WebSearchResultsUpdater" customModule="MVVM" customModuleProvider="target"/>
+                <customObject id="dsr-Ls-NmJ" customClass="SearchResultsTableViewUpdater" customModule="MVVM" customModuleProvider="target">
+                    <connections>
+                        <outletCollection property="updaters" destination="KmM-dV-1tk" collectionClass="NSMutableArray" id="LmW-xh-Ltx"/>
+                    </connections>
+                </customObject>
+                <customObject id="KmM-dV-1tk" customClass="WebSearchResultsUpdater" customModule="MVVM" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="section">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-394" y="193"/>
         </scene>

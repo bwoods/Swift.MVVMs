@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E805A6EC2139CBAF0047CBC6 /* TableViewSectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805A6EB2139CBAE0047CBC6 /* TableViewSectionUpdater.swift */; };
+		E805A6EE2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805A6ED2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift */; };
 		E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */; };
 		E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */; };
 		E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */; };
@@ -58,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E805A6EB2139CBAE0047CBC6 /* TableViewSectionUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSectionUpdater.swift; sourceTree = "<group>"; };
+		E805A6ED2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewUpdater.swift; sourceTree = "<group>"; };
 		E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+IBDesignable.swift"; path = "Application/UIView+IBDesignable.swift"; sourceTree = "<group>"; };
 		E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewAligned.swift; path = Application/UIImageViewAligned.swift; sourceTree = "<group>"; };
@@ -128,6 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E805A6EF2139CED60047CBC6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E805A6ED2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift */,
+				E86E35E021363C6E0046E9F8 /* WebSearchResultsUpdater.swift */,
+				E805A6EB2139CBAE0047CBC6 /* TableViewSectionUpdater.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		E83179B3213242A400C594E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,8 +297,8 @@
 			children = (
 				E86E3593213242E40046E9F8 /* Supporting File */,
 				E83179B3213242A400C594E4 /* Extensions */,
+				E805A6EF2139CED60047CBC6 /* Search */,
 				E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */,
-				E86E35E021363C6E0046E9F8 /* WebSearchResultsUpdater.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -431,6 +445,7 @@
 				E86E35B8213345770046E9F8 /* SQLiteQuery+NSValue.swift in Sources */,
 				E86E35BB213345770046E9F8 /* SQLiteWindow+Schemas.swift in Sources */,
 				E86E35BA213345770046E9F8 /* SQLiteTableViewDataSource.swift in Sources */,
+				E805A6EC2139CBAF0047CBC6 /* TableViewSectionUpdater.swift in Sources */,
 				E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */,
 				E86E35B9213345770046E9F8 /* SQLiteSectionedTableViewDatasource.swift in Sources */,
 				E86E35E121363C6E0046E9F8 /* WebSearchResultsUpdater.swift in Sources */,
@@ -440,6 +455,7 @@
 				E86E35B3213345770046E9F8 /* SQLiteQueryDecoder.swift in Sources */,
 				E86E35B1213345770046E9F8 /* SQLiteDecoderFunctions.swift in Sources */,
 				E86E35DB2135E0880046E9F8 /* LUNTabBarController.m in Sources */,
+				E805A6EE2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift in Sources */,
 				E86E35DC2135E0880046E9F8 /* LUNTabBarAnimationController.m in Sources */,
 				E86E35DF2135E8AC0046E9F8 /* ApplicationTabBarController.m in Sources */,
 				E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */,

@@ -41,9 +41,9 @@ class SearchControllerNavigationItem: UINavigationItem {
 			self.searchController!.obscuresBackgroundDuringPresentation = false
 			self.searchController!.searchBar.autocapitalizationType = .none
 			self.searchController!.searchBar.autocorrectionType = .no
-			self.searchController!.searchBar.keyboardType = .webSearch // .URL has no space bar
-			self.searchController!.searchBar.returnKeyType = .done
+			self.searchController!.searchBar.keyboardType = .webSearch // .url has no space bar
 			self.searchController!.searchBar.showsCancelButton = false // searchController handles Cancel
+			self.searchController!.searchBar.returnKeyType = .search // FIXME: not working?
 			self.searchController!.searchResultsUpdater = searchResultsUpdater
 
 			tableViewController.tableView.dataSource = searchResultsUpdater
