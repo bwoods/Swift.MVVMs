@@ -3,61 +3,58 @@ import UIKit
 
 @IBDesignable
 class SearchControllerNavigationItem: UINavigationItem {
-	@IBOutlet var inputAccessoryView: UIView! {
-		get { return self.searchController!.searchBar.inputAccessoryView }
-		set { self.searchController!.searchBar.inputAccessoryView = newValue }
+	@IBInspectable var alwaysShowSearchBar: Bool = false {
+		didSet { self.hidesSearchBarWhenScrolling = !alwaysShowSearchBar }
+	}
+
+	@IBOutlet var inputAccessoryView: UIView? {
+		didSet { self.searchController?.searchBar.inputAccessoryView = inputAccessoryView }
 	}
 
 	@IBOutlet var searchControllerDelegate: UISearchControllerDelegate? {
-		get { return self.searchController!.delegate }
-		set { self.searchController!.delegate = newValue }
+		didSet { self.searchController?.delegate = searchControllerDelegate }
 	}
 
 	@IBOutlet var searchBarDelegate: UISearchBarDelegate? {
-		get { return self.searchController!.searchBar.delegate }
-		set { self.searchController!.searchBar.delegate = newValue }
-	}
-
-	@IBOutlet var searchResultsUpdater: UISearchResultsUpdater?
-	
-	@IBInspectable var alwaysShowSearchBar: Bool {
-		get { return !self.hidesSearchBarWhenScrolling }
-		set { self.hidesSearchBarWhenScrolling = !newValue }
+		didSet { self.searchController?.searchBar.delegate = searchBarDelegate }
 	}
 
 	@IBInspectable var placeholder: String? {
-		get { return self.searchController!.searchBar.placeholder }
-		set { self.searchController!.searchBar.placeholder = newValue }
+		didSet { self.searchController?.searchBar.placeholder = placeholder }
 	}
 
-// MARK: -
-	required init?(coder: NSCoder) {
-		super.init(coder: coder)
+	@IBOutlet var searchResultsUpdater: SearchControllerUpdater? {
+		didSet {
+			let tableViewController = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as! UITableViewController
+			self.searchController = UISearchController(searchResultsController: tableViewController)
+			
+			self.searchController!.definesPresentationContext = true
+			// definesPresentationContext = true must ALSO be set on this item’s UIVIewController or the tableView will cover it
 
-//		let tableViewController = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "Search Results") as! UITableViewController
-//		self.searchController = UISearchController(searchResultsController: tableViewController)
+			self.searchController!.searchBar.inputAccessoryView = inputAccessoryView
+			self.searchController!.searchBar.placeholder = placeholder
+			self.searchController!.searchBar.delegate = searchBarDelegate
+			self.searchController!.delegate = searchControllerDelegate
+			self.hidesSearchBarWhenScrolling = !alwaysShowSearchBar
 
-		self.searchController = UISearchController(searchResultsController: nil)
-//		self.searchController!.definesPresentationContext = true
+			self.searchController!.hidesNavigationBarDuringPresentation = false
+			self.searchController!.obscuresBackgroundDuringPresentation = false
+			self.searchController!.searchBar.autocapitalizationType = .none
+			self.searchController!.searchBar.autocorrectionType = .no
+			self.searchController!.searchBar.keyboardType = .webSearch // .URL has no space bar
+			self.searchController!.searchBar.returnKeyType = .done
+			self.searchController!.searchBar.showsCancelButton = false // searchController handles Cancel
+			self.searchController!.searchResultsUpdater = searchResultsUpdater
 
-		self.searchController!.hidesNavigationBarDuringPresentation = false
-		self.searchController!.obscuresBackgroundDuringPresentation = false
-		self.searchController!.searchBar.autocapitalizationType = .none
-		self.searchController!.searchBar.autocorrectionType = .no
-		self.searchController!.searchBar.keyboardType = .webSearch // .URL has no space bar
-		self.searchController!.searchBar.returnKeyType = .done
-		self.searchController!.searchBar.showsCancelButton = false // searchController handles Cancel
-		self.searchController!.searchResultsUpdater = searchResultsUpdater
-
-//		tableViewController.tableView.dataSource = searchResultsUpdater
-//		tableViewController.tableView.delegate = searchResultsUpdater
-//		searchResultsUpdater?.tableView = tableViewController.tableView
+			tableViewController.tableView.dataSource = searchResultsUpdater
+			tableViewController.tableView.delegate = searchResultsUpdater
+			searchResultsUpdater?.tableView = tableViewController.tableView
+		}
 	}
-
 }
 
 
-@objc protocol UISearchResultsUpdater : UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
+@objc protocol SearchControllerUpdater : UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
 	var tableView: UITableView! { get set } // implicit to match UITableViewController; just in case…
 }
 

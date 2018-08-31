@@ -33,6 +33,7 @@
 		E86E35DB2135E0880046E9F8 /* LUNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E86E35D42135E0880046E9F8 /* LUNTabBarController.m */; settings = {COMPILER_FLAGS = "-Wno-documentation"; }; };
 		E86E35DC2135E0880046E9F8 /* LUNTabBarAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E86E35D72135E0880046E9F8 /* LUNTabBarAnimationController.m */; settings = {COMPILER_FLAGS = "-Wno-documentation"; }; };
 		E86E35DF2135E8AC0046E9F8 /* ApplicationTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */; settings = {COMPILER_FLAGS = "-Wno-documentation"; }; };
+		E86E35E121363C6E0046E9F8 /* WebSearchResultsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35E021363C6E0046E9F8 /* WebSearchResultsUpdater.swift */; };
 		E89BDF67212905F90066D930 /* Schemas.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BDF66212905F90066D930 /* Schemas.xcassets */; };
 		E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */; };
 		E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */; };
@@ -87,6 +88,7 @@
 		E86E35D82135E0880046E9F8 /* LUNTabBarAnimationController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUNTabBarAnimationController+Private.h"; sourceTree = "<group>"; };
 		E86E35DA2135E0880046E9F8 /* LUNTabBarFloatingControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUNTabBarFloatingControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
 		E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationTabBarController.m; sourceTree = "<group>"; };
+		E86E35E021363C6E0046E9F8 /* WebSearchResultsUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchResultsUpdater.swift; sourceTree = "<group>"; };
 		E89BDF66212905F90066D930 /* Schemas.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Schemas.xcassets; sourceTree = "<group>"; };
 		E89BDF6B212A83D40066D930 /* NestedExtendedDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedExtendedDiff.swift; sourceTree = "<group>"; };
 		E89BDF6C212A83D40066D930 /* ExtendedPatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedPatch.swift; sourceTree = "<group>"; };
@@ -132,9 +134,9 @@
 				E86E35A021332A520046E9F8 /* DateLabel.swift */,
 				E86E359A21324B550046E9F8 /* TintedLabel.swift */,
 				E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */,
-				E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */,
 				E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */,
 				E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */,
+				E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -154,7 +156,6 @@
 				E86E35C92134863F0046E9F8 /* Shortcuts.storyboard */,
 				E8D52CC02127D821003BE5CC /* ApplicationBridging.h */,
 				E8D52CA42127D2D6003BE5CC /* ApplicationDelegate.swift */,
-				E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */,
 				E8D52CB02127D2D7003BE5CC /* Info.plist */,
 				E8BB26842130CF2E00F13A4F /* Settings.bundle */,
 			);
@@ -282,6 +283,8 @@
 			children = (
 				E86E3593213242E40046E9F8 /* Supporting File */,
 				E83179B3213242A400C594E4 /* Extensions */,
+				E86E35DE2135E8AC0046E9F8 /* ApplicationTabBarController.m */,
+				E86E35E021363C6E0046E9F8 /* WebSearchResultsUpdater.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -306,7 +309,7 @@
 				E8D52C9D2127D2D6003BE5CC /* Sources */,
 				E8D52C9E2127D2D6003BE5CC /* Frameworks */,
 				E8D52C9F2127D2D6003BE5CC /* Resources */,
-				E80327CA2131336200FD26C4 /* ShellScript */,
+				E80327CA2131336200FD26C4 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -372,13 +375,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E80327CA2131336200FD26C4 /* ShellScript */ = {
+		E80327CA2131336200FD26C4 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +433,7 @@
 				E86E35BA213345770046E9F8 /* SQLiteTableViewDataSource.swift in Sources */,
 				E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */,
 				E86E35B9213345770046E9F8 /* SQLiteSectionedTableViewDatasource.swift in Sources */,
+				E86E35E121363C6E0046E9F8 /* WebSearchResultsUpdater.swift in Sources */,
 				E86E35B2213345770046E9F8 /* SQLiteDecoder.swift in Sources */,
 				E86E35B4213345770046E9F8 /* SQLiteRowDecoder.swift in Sources */,
 				E86E35B5213345770046E9F8 /* SQLiteValueDecoder.swift in Sources */,
