@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E805A6EC2139CBAF0047CBC6 /* TableViewSectionUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805A6EB2139CBAE0047CBC6 /* TableViewSectionUpdater.swift */; };
 		E805A6EE2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805A6ED2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift */; };
+		E86C95EC213A2370007236C1 /* DuckDuckGoResultsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C95EB213A2370007236C1 /* DuckDuckGoResultsUpdater.swift */; };
 		E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */; };
 		E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */; };
 		E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		E805A6EB2139CBAE0047CBC6 /* TableViewSectionUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSectionUpdater.swift; sourceTree = "<group>"; };
 		E805A6ED2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewUpdater.swift; sourceTree = "<group>"; };
+		E86C95EB213A2370007236C1 /* DuckDuckGoResultsUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckDuckGoResultsUpdater.swift; sourceTree = "<group>"; };
 		E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+IBDesignable.swift"; path = "Application/UIView+IBDesignable.swift"; sourceTree = "<group>"; };
 		E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewAligned.swift; path = Application/UIImageViewAligned.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				E805A6ED2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift */,
 				E86E35E021363C6E0046E9F8 /* WebSearchResultsUpdater.swift */,
+				E86C95EB213A2370007236C1 /* DuckDuckGoResultsUpdater.swift */,
 				E805A6EB2139CBAE0047CBC6 /* TableViewSectionUpdater.swift */,
 			);
 			name = Search;
@@ -455,6 +458,7 @@
 				E86E35B3213345770046E9F8 /* SQLiteQueryDecoder.swift in Sources */,
 				E86E35B1213345770046E9F8 /* SQLiteDecoderFunctions.swift in Sources */,
 				E86E35DB2135E0880046E9F8 /* LUNTabBarController.m in Sources */,
+				E86C95EC213A2370007236C1 /* DuckDuckGoResultsUpdater.swift in Sources */,
 				E805A6EE2139CE2B0047CBC6 /* SearchResultsTableViewUpdater.swift in Sources */,
 				E86E35DC2135E0880046E9F8 /* LUNTabBarAnimationController.m in Sources */,
 				E86E35DF2135E8AC0046E9F8 /* ApplicationTabBarController.m in Sources */,

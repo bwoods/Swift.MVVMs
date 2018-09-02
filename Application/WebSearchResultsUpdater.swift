@@ -9,17 +9,20 @@ import UIKit
 	- Important:
 		The following “errors” will be reported as URLs are being checked for validity:
 
-		- NSURLErrorDomain: -999
-		- NSURLErrorTimedOut: -1001
-		- NSURLErrorCannotFindHost: -1003
-		- NSURLErrorSecureConnectionFailed: -1200
+		- kCFURLErrorCancelled: -999
+		- kCFURLErrorTimedOut: -1001
+		- kCFURLErrorCannotFindHost: -1003
+		- kCFURLErrorSecureConnectionFailed: -1200
+		- kCFURLErrorServerCertificateUntrusted: -1202
 
 		Other than making the log useless (by flooding it) they are expected and harmless.
 */
 class WebSearchResultsUpdater: TableViewSectionUpdater {
 	var httpTask: URLSessionTask?
 	var httpsTask: URLSessionTask?
-	var results: [URL] = [ ] { didSet { reloadSection() } }
+
+	var searchTerms = "" { didSet { reloadSection(animated: false) } }
+	var results: [URL] = [ ] { didSet { reloadSection(animated: results.count > 0) } }
 
 	override func update(with value: AnyObject?) {
 		guard let searchTerms = value as? String, searchTerms != "" else {
@@ -30,6 +33,7 @@ class WebSearchResultsUpdater: TableViewSectionUpdater {
 		httpsTask?.cancel(); httpsTask = nil
 		httpTask?.cancel(); httpTask = nil
 
+		self.searchTerms = searchTerms
 		let convertPathToHostIfNeeded = { (components: URLComponents) -> URLComponents in // "example.com" puts the string in the path, not the host
 			var components = components
 			if let pathComponents = (components.path as NSString?)?.pathComponents, pathComponents.count > 0 {
@@ -91,7 +95,7 @@ class WebSearchResultsUpdater: TableViewSectionUpdater {
 							return // another request has replaced this one
 						}
 
-						self.results = Set([ http.url ?? url ])
+						self.results = Set([ http.url ?? url ]) // http.url will contain the redirect URL, if any
 							.union(self.results) // unique the URLs (redirects may result in duplicates)
 							.sorted(by: { return $0.scheme!.count > $1.scheme!.count }) // sort ‘https’ before ‘http’
 					}
@@ -107,15 +111,21 @@ class WebSearchResultsUpdater: TableViewSectionUpdater {
 
 // MARK: - UITableViewDataSource methods
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return results.isEmpty ? nil : "Web Suggestions"
+		return "Web Suggestions" // serves as a header for both this and the next section
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return results.count
+		return 1 + results.count
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let url = results[indexPath.row]
+		guard indexPath.row != 0 else {
+			let cell = tableView.dequeueReusableCell(withIdentifier: "URL Search", for: indexPath)
+			cell.textLabel?.text = searchTerms.trimmingCharacters(in: .whitespacesAndNewlines)
+			return cell
+		}
+
+		let url = results[indexPath.row - 1]
 		let cell = tableView.dequeueReusableCell(withIdentifier: url.scheme == "https" ? "URL https" : "URL http", for: indexPath)
 		if url.path == "/" {
 			cell.textLabel?.text = url.host!

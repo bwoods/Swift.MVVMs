@@ -6,9 +6,13 @@ class TableViewSectionUpdater: NSObject {
 	@IBInspectable var section: Int = 0
 	weak var updatee: UITableView?
 
-	func reloadSection() {
-		UIView.performWithoutAnimation {
-			updatee?.reloadSections(IndexSet(integer: section), with: .none)
+	func reloadSection(animated: Bool = false) {
+		if animated {
+			updatee?.reloadSections(IndexSet(integer: section), with: .fade)
+		} else {
+			UIView.performWithoutAnimation {
+				updatee?.reloadSections(IndexSet(integer: section), with: .none)
+			}
 		}
 	}
 

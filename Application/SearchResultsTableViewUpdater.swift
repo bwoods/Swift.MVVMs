@@ -31,6 +31,10 @@ class SearchResultsTableViewUpdater: NSObject, SearchControllerUpdater {
 		return updaters.count
 	}
 
+	 func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return updaters[section].tableView(tableView, titleForHeaderInSection: section)
+	}
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return updaters[section].tableView(tableView, numberOfRowsInSection: section)
 	}
