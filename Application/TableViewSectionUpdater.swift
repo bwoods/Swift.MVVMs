@@ -8,7 +8,7 @@ class TableViewSectionUpdater: NSObject {
 
 	func reloadSection(animated: Bool = false) {
 		if animated {
-			updatee?.reloadSections(IndexSet(integer: section), with: .fade)
+			updatee?.reloadSections(IndexSet(integer: section), with: .automatic)
 		} else {
 			UIView.performWithoutAnimation {
 				updatee?.reloadSections(IndexSet(integer: section), with: .none)

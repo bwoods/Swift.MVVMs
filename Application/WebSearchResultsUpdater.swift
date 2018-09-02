@@ -12,6 +12,7 @@ import UIKit
 		- kCFURLErrorCancelled: -999
 		- kCFURLErrorTimedOut: -1001
 		- kCFURLErrorCannotFindHost: -1003
+		- kCFURLErrorNotConnectedToInternet: -1009
 		- kCFURLErrorSecureConnectionFailed: -1200
 		- kCFURLErrorServerCertificateUntrusted: -1202
 

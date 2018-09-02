@@ -3,9 +3,9 @@ import UIKit
 
 class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 	struct Result : Decodable {
-		let Heading: String // DuckDuckGo uses PascalCase, rather than camelCase or snake_case…
+		let Heading: String // DuckDuckGo uses PascalCase, rather than camelCase or snakse_case…
 		let AbstractText: String
-		let AbstractURL: String // FIXME: URL
+		let AbstractURL: URL // FIXME: URL
 		let AbstractSource: String
 	}
 
@@ -13,6 +13,7 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 	var task: URLSessionTask?
 
 	override func update(with value: AnyObject?) {
+		result = nil
 		guard let searchTerms = value as? String, searchTerms != "" else {
 			return
 		}
@@ -45,11 +46,21 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return result?.AbstractText.isEmpty == false ? 2 : 1
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		switch (indexPath.row, result?.AbstractText.isEmpty) {
+		case (0, _):
 			return tableView.dequeueReusableCell(withIdentifier: "More From DuckDuckGo", for: indexPath)
+		case (1, false):
+			let cell = tableView.dequeueReusableCell(withIdentifier: "Info From DuckDuckGo", for: indexPath)
+			(cell.contentView.viewWithTag(1) as! UILabel).text = result!.Heading
+			(cell.contentView.viewWithTag(2) as! UILabel).text = result!.AbstractText
+			return cell
+		default:
+			fatalError()
+		}
 	}
 	
 }

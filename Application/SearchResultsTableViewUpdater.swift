@@ -35,6 +35,10 @@ class SearchResultsTableViewUpdater: NSObject, SearchControllerUpdater {
 		return updaters[section].tableView(tableView, titleForHeaderInSection: section)
 	}
 
+	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+		
+	}
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return updaters[section].tableView(tableView, numberOfRowsInSection: section)
 	}
