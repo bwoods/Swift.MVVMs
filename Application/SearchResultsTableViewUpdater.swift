@@ -6,6 +6,10 @@ class SearchResultsTableViewUpdater: NSObject, SearchControllerUpdater {
 		willSet { newValue.forEach { $0.updatee = tableView } }
 	}
 
+	var searchTerms: String = "" {
+		didSet { updaters.forEach { $0.update(with: searchTerms as AnyObject) } }
+	}
+
 	weak var tableView: UITableView? {
 		didSet {
 			tableView?.rowHeight = UITableViewAutomaticDimension
@@ -16,15 +20,11 @@ class SearchResultsTableViewUpdater: NSObject, SearchControllerUpdater {
 		}
 	}
 
-	var searchTerms: String = "" {
-		didSet { updaters.forEach { $0.update(with: searchTerms as AnyObject) } }
-	}
 
 // MARK: - UISearchResultsUpdating methods
 	func updateSearchResults(for searchController: UISearchController) {
 		searchTerms = searchController.searchBar.text ?? ""
 	}
-
 
 // MARK: - UITableViewDataSource methods
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,6 +46,8 @@ class SearchResultsTableViewUpdater: NSObject, SearchControllerUpdater {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		return updaters[indexPath.section].tableView(tableView, cellForRowAt: indexPath)
 	}
+
+
 
 }
 

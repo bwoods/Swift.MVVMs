@@ -3,7 +3,7 @@ import UIKit
 
 class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 	struct Result : Decodable {
-		let Heading: String // DuckDuckGo uses PascalCase, rather than camelCase or snake_case, so we do to
+		let Heading: String // DuckDuckGo uses PascalCase, rather than camelCase or snake_case, so we do too
 		let AbstractText: String
 		let AbstractURL: URL
 		let AbstractSource: String
@@ -13,7 +13,7 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 			let FirstURL: URL? // the JSON stores both Topic entries with these properties…
 			let Text: String?
 
-			let Name: String? // …or nested Topic collections with these properties
+			let Name: String? // …and nested Topic collections with these properties in the same array
 			let Topics: [Topic]?
 		}
 	}
@@ -86,7 +86,7 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 				string = topic.Name!
 			} else {
 				string = topic.Text?.replacingOccurrences(of: "...", with: "…") ?? ""
-				if string.last != "…" { // if it end in an ellipsis, it is never to be treated as a header
+				if string.last != "…" { // if it ends in an ellipsis, it is never to be treated as a header
 					let tags = string.linguisticTags(in: string.startIndex..<string.endIndex, scheme: NSLinguisticTagScheme.lexicalClass.rawValue, tokenRanges: nil)
 					if (tags.lazy.reversed().first { $0 == "SentenceTerminator" }) == nil { // sentences fragments are treated as headings too
 						heading = true
