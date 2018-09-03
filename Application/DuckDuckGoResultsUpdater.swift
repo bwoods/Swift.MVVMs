@@ -3,10 +3,19 @@ import UIKit
 
 class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 	struct Result : Decodable {
-		let Heading: String // DuckDuckGo uses PascalCase, rather than camelCase or snakse_case…
+		let Heading: String // DuckDuckGo uses PascalCase, rather than camelCase or snake_case, so we do to
 		let AbstractText: String
-		let AbstractURL: URL // FIXME: URL
+		let AbstractURL: URL
 		let AbstractSource: String
+
+		let RelatedTopics: [Topic]
+		struct Topic : Decodable {
+			let FirstURL: URL? // the JSON stores both Topic entries with these properties…
+			let Text: String?
+
+			let Name: String? // …or nested Topic collections with these properties
+			let Topics: [Topic]?
+		}
 	}
 
 	var result: Result? = nil { didSet { reloadSection(animated: false) } }
@@ -46,20 +55,52 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return result?.AbstractText.isEmpty == false ? 2 : 1
+		switch (result?.RelatedTopics.count, result?.AbstractText.isEmpty) {
+		case (let .some(topics), false):
+			return 1 + topics;
+		case (let .some(topics), true):
+			return topics;
+		case (nil, nil):
+			return 0;
+		default:
+			fatalError()
+		}
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		switch (indexPath.row, result?.AbstractText.isEmpty) {
-		case (0, _):
-			return tableView.dequeueReusableCell(withIdentifier: "More From DuckDuckGo", for: indexPath)
-		case (1, false):
-			let cell = tableView.dequeueReusableCell(withIdentifier: "Info From DuckDuckGo", for: indexPath)
-			(cell.contentView.viewWithTag(1) as! UILabel).text = result!.Heading
-			(cell.contentView.viewWithTag(2) as! UILabel).text = result!.AbstractText
+		let fill = { (index: Int) ->UITableViewCell  in
+			let topic = self.result!.RelatedTopics[index]
+			var heading = (topic.Name?.isEmpty ?? true) == false
+
+			var string = ""
+			if heading {
+				string = topic.Name!
+			} else {
+				string = topic.Text?.replacingOccurrences(of: "...", with: "…") ?? ""
+				if string.last != "…" { // if it end in an ellipsis, it is never to be treated as a header
+					let tags = string.linguisticTags(in: string.startIndex..<string.endIndex, scheme: NSLinguisticTagScheme.lexicalClass.rawValue, tokenRanges: nil)
+					if (tags.lazy.reversed().first { $0 == "SentenceTerminator" }) == nil { // sentences fragments are treated as headings too
+						heading = true
+					}
+				}
+			}
+
+			let cell = tableView.dequeueReusableCell(withIdentifier: "Answer From DuckDuckGo", for: indexPath)
+			cell.textLabel!.text = heading ? string : nil
+			cell.detailTextLabel!.text = heading ? nil : string
 			return cell
-		default:
-			fatalError()
+		}
+
+		switch (indexPath.row, result?.AbstractText.isEmpty) {
+		case (0, false):
+			let cell = tableView.dequeueReusableCell(withIdentifier: "Answer From DuckDuckGo", for: indexPath)
+				cell.textLabel!.text = result!.Heading
+				cell.detailTextLabel!.text = result!.AbstractText
+			return cell
+		case (let index, nil):
+			return fill(index)
+		case (let index, let .some(empty)):
+			return fill(empty ? index : index - 1)
 		}
 	}
 	
