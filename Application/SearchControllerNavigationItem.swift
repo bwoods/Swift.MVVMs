@@ -2,7 +2,7 @@ import UIKit
 
 
 @IBDesignable
-class SearchControllerNavigationItem: UINavigationItem {
+class SearchControllerNavigationItem: UINavigationItem, UISearchBarDelegate {
 	@IBInspectable var alwaysShowSearchBar: Bool = false {
 		didSet { self.hidesSearchBarWhenScrolling = !alwaysShowSearchBar }
 	}
@@ -13,10 +13,6 @@ class SearchControllerNavigationItem: UINavigationItem {
 
 	@IBOutlet var searchControllerDelegate: UISearchControllerDelegate? {
 		didSet { self.searchController?.delegate = searchControllerDelegate }
-	}
-
-	@IBOutlet var searchBarDelegate: UISearchBarDelegate? {
-		didSet { self.searchController?.searchBar.delegate = searchBarDelegate }
 	}
 
 	@IBInspectable var placeholder: String? {
@@ -33,9 +29,11 @@ class SearchControllerNavigationItem: UINavigationItem {
 
 			self.searchController!.searchBar.inputAccessoryView = inputAccessoryView
 			self.searchController!.searchBar.placeholder = placeholder
-			self.searchController!.searchBar.delegate = searchBarDelegate
 			self.searchController!.delegate = searchControllerDelegate
 			self.hidesSearchBarWhenScrolling = !alwaysShowSearchBar
+
+			self.largeTitleDisplayMode = .always
+			self.searchController!.searchBar.delegate = self // for largeTitleDisplayMode handling
 
 			self.searchController!.hidesNavigationBarDuringPresentation = false
 			self.searchController!.obscuresBackgroundDuringPresentation = false
@@ -51,6 +49,16 @@ class SearchControllerNavigationItem: UINavigationItem {
 			searchResultsUpdater?.tableView = tableViewController.tableView
 		}
 	}
+
+// MARK: - UISearchBarDelegate methods
+	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+		largeTitleDisplayMode = .never
+	}
+
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		largeTitleDisplayMode = .always
+	}
+
 }
 
 
