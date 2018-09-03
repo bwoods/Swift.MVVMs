@@ -4,3 +4,6 @@
 [submodule "LUNTabBarController"]
 	path = LUNTabBarController
 	url = https://github.com/LunAppsMobile/LUNTabBarController.git
+[submodule "Pulley"]
+	path = Pulley
+	url = https://github.com/52inc/Pulley.git
