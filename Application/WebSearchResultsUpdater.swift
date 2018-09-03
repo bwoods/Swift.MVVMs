@@ -19,20 +19,25 @@ import UIKit
 		Other than making the log useless (by flooding it) they are expected and harmless.
 */
 class WebSearchResultsUpdater: TableViewSectionUpdater {
-	var httpTask: URLSessionTask?
-	var httpsTask: URLSessionTask?
+	var httpTask: URLSessionTask? {
+		willSet { if httpTask != nil { httpTask!.cancel(); UIApplication.decrementNetworkActivityCount() } }
+		didSet { if httpTask != nil { UIApplication.incrementNetworkActivityCount() } }
+	}
+
+	var httpsTask: URLSessionTask? {
+		willSet { if httpsTask != nil { httpsTask!.cancel(); UIApplication.decrementNetworkActivityCount() } }
+		didSet { if httpsTask != nil { UIApplication.incrementNetworkActivityCount() } }
+	}
 
 	var searchTerms = "" { didSet { reloadSection(animated: false) } }
 	var results: [URL] = [ ] { didSet { reloadSection(animated: results.count > 0) } }
 
 	override func update(with value: AnyObject?) {
+		results.removeAll(); httpsTask = nil; httpTask = nil
+
 		guard let searchTerms = value as? String, searchTerms != "" else {
 			return
 		}
-
-		results.removeAll();
-		httpsTask?.cancel(); httpsTask = nil
-		httpTask?.cancel(); httpTask = nil
 
 		self.searchTerms = searchTerms
 		let convertPathToHostIfNeeded = { (components: URLComponents) -> URLComponents in // "example.com" puts the string in the path, not the host
@@ -82,32 +87,34 @@ class WebSearchResultsUpdater: TableViewSectionUpdater {
 
 		var task: URLSessionTask!
 		task = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
-			if let http = response as? HTTPURLResponse {
-				switch http.statusCode {
-				case 405...406: fallthrough // our HTTP verb was not supported, but the server did responded
-				case 200: // 301...303, 307...308 redirects were turned into 200’s by URLSession
-					DispatchQueue.main.async {
-						guard let `self` = self else {
-							return
-						}
+			DispatchQueue.main.async {
+				guard let `self` = self else {
+					return
+				}
 
-						let current = self[keyPath: keyPath] // we use KeyPaths because “escaping closures can only capture inout parameters explicitly by value”
-						guard task.taskIdentifier == current?.taskIdentifier else {
-							return // another request has replaced this one
-						}
+				let current = self[keyPath: keyPath] // we use KeyPaths because “escaping closures can only capture inout parameters explicitly by value”
+				guard task.taskIdentifier == current?.taskIdentifier else {
+					return // another request has replaced this one
+				}
 
+				self[keyPath: keyPath] = nil // no race condition here because we're on the main queue
+
+				if let http = response as? HTTPURLResponse {
+					switch http.statusCode {
+					case 405...406: fallthrough // our HTTP verb was not supported, but the server did responded
+					case 200: // 301...303, 307...308 redirects were turned into 200’s by URLSession
 						self.results = Set([ http.url ?? url ]) // http.url will contain the redirect URL, if any
 							.union(self.results) // unique the URLs (redirects may result in duplicates)
 							.sorted(by: { return $0.scheme!.count > $1.scheme!.count }) // sort ‘https’ before ‘http’
+					default:
+						return // bad url, just ignore it
 					}
-				default:
-					return // bad url, just ignore it
 				}
 			}
 		}
 
 		task.resume()
-		self[keyPath: keyPath] = task // no race condition here with the callbacks because they will be on the next cycle at the soonest
+		self[keyPath: keyPath] = task
 	}
 
 // MARK: - UITableViewDataSource methods

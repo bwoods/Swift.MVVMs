@@ -19,10 +19,14 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 	}
 
 	var result: Result? = nil { didSet { reloadSection(animated: false) } }
-	var task: URLSessionTask?
+	var task: URLSessionTask? {
+		willSet { if task != nil { task!.cancel(); UIApplication.decrementNetworkActivityCount() } }
+		didSet { if task != nil { UIApplication.incrementNetworkActivityCount() } }
+	}
 
 	override func update(with value: AnyObject?) {
-		result = nil
+		self.result = nil; self.task = nil
+
 		guard let searchTerms = value as? String, searchTerms != "" else {
 			return
 		}
@@ -37,16 +41,21 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 		var request = URLRequest(url: components.url!)
 		request.cachePolicy = .returnCacheDataElseLoad // cached data is preferable
 
+		var task: URLSessionTask!
 		task = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
 			let result = try? JSONDecoder().decode(Result.self, from: data ?? Data())
-
 			DispatchQueue.main.async {
+				guard task.taskIdentifier == self?.task?.taskIdentifier else {
+					return // another request has replaced this one
+				}
+
 				self?.task = nil
 				self?.result = result
 			}
 		}
 
-		task?.resume()
+		task!.resume()
+		self.task = task
 	}
 
 // MARK: -

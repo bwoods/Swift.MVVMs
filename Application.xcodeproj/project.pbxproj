@@ -58,6 +58,7 @@
 		E8D52CAC2127D2D7003BE5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CAB2127D2D7003BE5CC /* Assets.xcassets */; };
 		E8D52CAF2127D2D7003BE5CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D52CAD2127D2D7003BE5CC /* LaunchScreen.storyboard */; };
 		E8D52CC22127D821003BE5CC /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = E8D52CC12127D821003BE5CC /* sqlite3.c */; settings = {COMPILER_FLAGS = "-w -DSQLITE_ENABLE_COLUMN_METADATA"; }; };
+		E8D75461213CDFAD0008E2BC /* Progress+networkActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D75460213CDFAD0008E2BC /* Progress+networkActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +69,7 @@
 		E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewAligned.swift; path = Application/UIImageViewAligned.swift; sourceTree = "<group>"; };
 		E86E359A21324B550046E9F8 /* TintedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintedLabel.swift; path = Application/TintedLabel.swift; sourceTree = "<group>"; };
-		E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+AutoSizing.swift"; sourceTree = "<group>"; };
+		E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionView+AutoSizing.swift"; path = "Application/UICollectionView+AutoSizing.swift"; sourceTree = "<group>"; };
 		E86E35A021332A520046E9F8 /* DateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateLabel.swift; path = Application/DateLabel.swift; sourceTree = "<group>"; };
 		E86E35A4213345760046E9F8 /* SQLiteDecoderFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDecoderFunctions.swift; sourceTree = "<group>"; };
 		E86E35A5213345760046E9F8 /* SQLiteDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDecoder.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		E8D52CBF2127D816003BE5CC /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		E8D52CC02127D821003BE5CC /* ApplicationBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationBridging.h; sourceTree = "<group>"; };
 		E8D52CC12127D821003BE5CC /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		E8D75460213CDFAD0008E2BC /* Progress+networkActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Progress+networkActivityIndicator.swift"; path = "Application/Progress+networkActivityIndicator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */,
 				E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */,
 				E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */,
+				E8D75460213CDFAD0008E2BC /* Progress+networkActivityIndicator.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -439,6 +442,7 @@
 				E89BDF85212A83D40066D930 /* Patch+Apply.swift in Sources */,
 				E89BDF7C212A83D40066D930 /* ExtendedDiff.swift in Sources */,
 				E89BDF80212A83D40066D930 /* GenericPatch.swift in Sources */,
+				E8D75461213CDFAD0008E2BC /* Progress+networkActivityIndicator.swift in Sources */,
 				E89BDF7B212A83D40066D930 /* ExtendedPatch.swift in Sources */,
 				E89BDF83212A83D40066D930 /* NestedBatchUpdate.swift in Sources */,
 				E89BDF7A212A83D40066D930 /* NestedExtendedDiff.swift in Sources */,
