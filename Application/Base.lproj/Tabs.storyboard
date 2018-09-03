@@ -14,7 +14,7 @@
         <!--Application Tab Bar Controller-->
         <scene sceneID="jhK-4X-OTX">
             <objects>
-                <tabBarController storyboardIdentifier="Tabs" id="HB7-lp-J3M" customClass="ApplicationTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tabs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HB7-lp-J3M" customClass="ApplicationTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2LE-Wm-Ng5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

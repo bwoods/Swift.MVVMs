@@ -13,7 +13,7 @@
         <!--Search-->
         <scene sceneID="MOW-ID-tyW">
             <objects>
-                <collectionViewController definesPresentationContext="YES" id="jWZ-Jy-mkV" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Favorites" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jWZ-Jy-mkV" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sZO-aU-lMN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
         <!--Table View Controller-->
         <scene sceneID="cgO-rx-x0j">
             <objects>
-                <tableViewController storyboardIdentifier="Search Results" id="vb1-8m-D3Y" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Search Results" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vb1-8m-D3Y" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uWV-H4-qNN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
