@@ -26,6 +26,11 @@ class SearchResultsTableViewUpdater: NSObject, SearchControllerUpdater {
 		searchTerms = searchController.searchBar.text ?? ""
 	}
 
+// MARK: - UITableViewDelegate methods
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		return updaters[indexPath.section].tableView(tableView, didSelectRowAt: indexPath)
+	}
+
 // MARK: - UITableViewDataSource methods
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return updaters.count
@@ -46,8 +51,6 @@ class SearchResultsTableViewUpdater: NSObject, SearchControllerUpdater {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		return updaters[indexPath.section].tableView(tableView, cellForRowAt: indexPath)
 	}
-
-
 
 }
 

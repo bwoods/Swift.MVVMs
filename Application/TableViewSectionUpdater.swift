@@ -22,6 +22,10 @@ class TableViewSectionUpdater: NSObject {
 	}
 
 // MARK: -
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		// do nothing by default
+	}
+
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		fatalError("This method must be overridden")
 	}

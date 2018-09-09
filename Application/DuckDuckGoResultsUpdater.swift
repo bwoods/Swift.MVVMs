@@ -58,7 +58,7 @@ class DuckDuckGoResultsUpdater: TableViewSectionUpdater {
 		self.task = task
 	}
 
-// MARK: -
+// MARK: - UITableViewDataSource methods
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return nil
 	}

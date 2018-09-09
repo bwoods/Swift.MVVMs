@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 
 /**
@@ -116,7 +117,7 @@ class WebSearchResultsUpdater: TableViewSectionUpdater {
 		task.resume()
 		self[keyPath: keyPath] = task
 	}
-
+	
 // MARK: - UITableViewDataSource methods
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return "Web Suggestions" // serves as a header for both this and the next section
@@ -142,6 +143,28 @@ class WebSearchResultsUpdater: TableViewSectionUpdater {
 		}
 
 		return cell
+	}
+
+// MARK: - UITableViewDelegate methods
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let url: URL = {
+			if indexPath.row > 0 {
+				return results[indexPath.row - 1]
+			} else {
+				var components = URLComponents(string: "https://duckduckgo.com/")!
+				components.queryItems = [
+					URLQueryItem(name: "q", value: searchTerms)
+				]
+				return components.url!
+			}
+		}()
+
+		let configuration = SFSafariViewController.Configuration()
+		configuration.barCollapsingEnabled = true
+		configuration.entersReaderIfAvailable = true
+
+		let controller = SFSafariViewController(url: url, configuration: configuration)
+		tableView.viewController?.present(controller, animated: true)
 	}
 
 }

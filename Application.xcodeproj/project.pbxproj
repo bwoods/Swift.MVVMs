@@ -14,6 +14,7 @@
 		E806757E213D1E3E003D8232 /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E806757A213D1E3E003D8232 /* PulleyViewController.swift */; };
 		E8067581213DCE61003D8232 /* TintedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8067580213DCE61003D8232 /* TintedImageView.swift */; };
 		E86C95EC213A2370007236C1 /* DuckDuckGoResultsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86C95EB213A2370007236C1 /* DuckDuckGoResultsUpdater.swift */; };
+		E86CFFA22144D8BF00C8CE3D /* UIResponder+viewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CFFA12144D8BF00C8CE3D /* UIResponder+viewController.swift */; };
 		E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */; };
 		E86E3597213246400046E9F8 /* SQLiteCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */; };
 		E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */; };
@@ -74,6 +75,7 @@
 		E806757A213D1E3E003D8232 /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
 		E8067580213DCE61003D8232 /* TintedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TintedImageView.swift; path = Application/TintedImageView.swift; sourceTree = "<group>"; };
 		E86C95EB213A2370007236C1 /* DuckDuckGoResultsUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckDuckGoResultsUpdater.swift; sourceTree = "<group>"; };
+		E86CFFA12144D8BF00C8CE3D /* UIResponder+viewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIResponder+viewController.swift"; path = "Application/UIResponder+viewController.swift"; sourceTree = "<group>"; };
 		E86E3594213243090046E9F8 /* UIView+IBDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+IBDesignable.swift"; path = "Application/UIView+IBDesignable.swift"; sourceTree = "<group>"; };
 		E86E35962132463F0046E9F8 /* SQLiteCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		E86E359821324B2A0046E9F8 /* UIImageViewAligned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewAligned.swift; path = Application/UIImageViewAligned.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				E86E359E21325DBA0046E9F8 /* UICollectionView+AutoSizing.swift */,
 				E86E35CF2134F1390046E9F8 /* SearchControllerNavigationItem.swift */,
 				E8D75460213CDFAD0008E2BC /* UIApplication+networkActivityIndicator.swift */,
+				E86CFFA12144D8BF00C8CE3D /* UIResponder+viewController.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -505,6 +508,7 @@
 				E86E35DF2135E8AC0046E9F8 /* ApplicationTabBarController.m in Sources */,
 				E8D52CA52127D2D6003BE5CC /* ApplicationDelegate.swift in Sources */,
 				E86E35A121332A530046E9F8 /* DateLabel.swift in Sources */,
+				E86CFFA22144D8BF00C8CE3D /* UIResponder+viewController.swift in Sources */,
 				E806757D213D1E3E003D8232 /* UIView+constrainToParent.swift in Sources */,
 				E86E359921324B2A0046E9F8 /* UIImageViewAligned.swift in Sources */,
 				E86E3595213243090046E9F8 /* UIView+IBDesignable.swift in Sources */,
