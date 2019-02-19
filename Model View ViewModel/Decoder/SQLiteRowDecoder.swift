@@ -45,7 +45,7 @@ struct SQLiteRowDecoder<Key: CodingKey>: KeyedDecodingContainerProtocol {
 	func decode(_ type: UInt16.Type, forKey key: Key) throws -> UInt16 { return try decoder(for: key).decode(type) }
 	func decode(_ type: UInt32.Type, forKey key: Key) throws -> UInt32 { return try decoder(for: key).decode(type) }
 	func decode(_ type: UInt64.Type, forKey key: Key) throws -> UInt64 { return try decoder(for: key).decode(type) }
-	func decode<T>(_ type: T.Type, forKey key: Key) throws -> T where T : Decodable { return try decoder(for: key).decode(T.self) }
+	func decode<T>(_ type: T.Type, forKey key: Key) throws -> T where T : Decodable { return try T(from: SQLiteDecoder(stmt: stmt)) }
 
 	func superDecoder() throws -> Decoder { return SQLiteDecoder(stmt: stmt) }
 	func superDecoder(forKey key: Key) throws -> Decoder { return SQLiteDecoder(stmt: stmt) }
